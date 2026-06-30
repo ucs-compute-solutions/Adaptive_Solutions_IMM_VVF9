@@ -1,0 +1,66 @@
+---
+
+- name: "Configure Storage Policy"
+  vars:
+    api_info: &api_info_local_boot
+      api_private_key: "{{ intersight_api_private_key }}"
+      api_key_id: "{{ intersight_api_key_id }}"
+      api_uri: "{{ api_uri | default(omit) }}"
+      validate_certs: "{{ validate_certs | default(omit) }}"
+      state: "{{ state | default(omit) }}"
+  block:
+  - name: "Storage Policy for Local Boot"
+    cisco.intersight.intersight_rest_api:
+          <<: *api_info_local_boot
+          resource_path: /storage/StoragePolicies
+          query_params:
+             $filter: "Name eq '{{ name_of_storage_policy }}'"
+          api_body: {
+              "Name": "{{ name_of_storage_policy }}",
+              "Description": "{{ description_of_storage_policy }}",
+              "UseJbodForVdCreation": false,
+              "UnusedDisksState": "UnconfiguredGood",
+              "DefaultDriveMode": "UnconfiguredGood",
+              "Organization": {
+                 "Moid": "{{ intersight_org.api_response.Moid }}"
+               },
+              Tags: [{Key: "configmode", Value: "Intersight-Ansible"},{Key: "prefix", Value: "{{ prefix }}"}]  
+           }
+    register: storage_policy
+  
+  - name: "Create Drive Group"
+    cisco.intersight.intersight_rest_api:
+          <<: *api_info_local_boot
+          resource_path: /bulk/Requests
+          query_params:
+            $filter: "Name eq '{{ name_of_drive_group }}'"
+          api_body: {
+            "Verb": "POST",
+            "Uri":"/v1/storage/DriveGroups",
+            "Requests": [
+              {
+                "ObjectType":"bulk.RestSubRequest",
+                "Body": {
+                  #"Type":0,
+                  "Name":"{{ name_of_drive_group }}",
+                  "RaidLevel":"Raid1",
+                  #"SecureDriveGroup":false,
+                  "ManualDriveGroup": {
+                    "SpanGroups": [
+                      {
+                        "Slots":"1-2"
+                      }
+                    ]
+                  },
+                  "VirtualDrives": [ 
+                    {
+                      "Name":"{{ virtual_drive_name }}",
+                      "ExpandToAvailable":true,
+                      "BootDrive":true,
+                      }
+                    ],
+                    "StoragePolicy": "{{ storage_policy.api_response.Moid }}"
+                  }
+                }
+              ]
+            }
