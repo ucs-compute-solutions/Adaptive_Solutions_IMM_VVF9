@@ -1,4 +1,4 @@
-# AdaptiveSolutions_IMM_VVF9
+# AdaptiveSolutions_VVF9_IMM_BHE
 Ansible repository for the Adaptive Solutions Conveged Infrastructure. This release is focused on a Virtual Server Infrastructure hosted with Cisco UCS X210c M8 servers hosted with a Cisco UCS 6664 Fabric Interconnect and the Hitachi VSP One Block High End. The Ansible playbooks shown are for a sub-set of a buildout covering the UCS Server Profile Template creation through UCS IMM interacting with Intersight.
 
 # Cisco and Hitachi Adaptive Solutions for Converged Infrastructure IMM configuration with Ansible
@@ -6,7 +6,7 @@ Ansible repository for the Adaptive Solutions Conveged Infrastructure. This rele
 The Adaptive Solutions partnership between Cisco and Hitachi produces converged infrastructure based validated reference architectures.  These architectures feature Cisco UCS servers and Hitachi VSP storage, with connecting infrastructure involving Cisco MDS Multi-layer Switches for Fibre Channel traffic and Cisco Nexus Switches for Ethernet traffic. 
 ## Solution Architecture
 
-![AdaptiveSolutions VSI Topology](https://github.com/rcisaac/AdaptiveSolutions_IMM_NVMe_TCP/blob/2cc8fee8cc5453e6d0e919c375ebabfd185d433c/AdaptiveSolutions%20VSI%20X-Direct%20One%20Block%20Topology.png?raw=true)
+<img width="900" height="738" alt="AdaptiveSolutions VVF9 BHE Topology" src="https://github.com/user-attachments/assets/4ed0a1e3-3508-4d72-b961-3a8623b925aa" />
 
 Information on the program is conveyed through white papers and Cisco Validated Designs (CVDs) that are developed as a cooperative effort between the two companies.  
 
