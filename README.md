@@ -16,7 +16,6 @@ Some prior steps will need to be performed that are not covered in the Ansible p
 
 The steps that will need to be followed will be:
 - [Intersight Setup](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/hitachi_adaptive_vmware_vsp.html#Intersight_Setup) 
-- [Onboarding to Intersight](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/hitachi_adaptive_vmware_vsp.html#OnboardingtoIntersight) 
 
 Running through these steps and the subsequent Ansible playbooks will require an Intersight account at https://intersight.com.
 
