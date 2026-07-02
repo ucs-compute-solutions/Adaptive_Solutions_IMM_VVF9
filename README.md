@@ -1,11 +1,10 @@
 # AdaptiveSolutions_VVF9_IMM_BHE
 Ansible repository for the Adaptive Solutions Conveged Infrastructure. This release is focused on a Virtual Server Infrastructure hosted with Cisco UCS X210c M8 servers hosted with a Cisco UCS 6664 Fabric Interconnect and the Hitachi VSP One Block High End. The Ansible playbooks included are for:
 - A sub-set of a buildout covering the UCS Domain and UCS Server Profile Template creation through Intersight Managed Mode (IMM) interacting with Intersight.
-- Hitachi VSP One Block storage buildout with an NVMe/TCP storage subsystem.
+- Hitachi VSP One Block High End storage buildout with a Fibre Channel storage subsystem.
 
 This repository will also include ICO custom  Ansible exported workflows for:
 -  TBD . These workflows will enable users who utilize the Hitachi VSP  within ICO environments to efficiently utilize Ansible within a single workflow for large scale environments.
-
 
 # Cisco and Hitachi Adaptive Solutions for Converged Infrastructure IMM configuration with Ansible
 
