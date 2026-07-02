@@ -60,7 +60,7 @@ To execute the example automation in this repo, update the inventory and variabl
 
 **NOTE:** If secrets.yml has been encrypted with ansible-vault, include `--ask-vault-pass` in the invocation.
 
-1.  Create the UCS Domain Profile (base configuration of FI and ports): `nsible-playbook ./Setup_UCS_Domain_Profile.yml`
+1.  Create the UCS Domain Profile (base configuration of FI and ports): `ansible-playbook ./Setup_UCS_Domain_Profile.yml`
 2.	Create the UCS Server Profile Pools (MAC,WWNN,WWPN,UUID,IP): `ansible-playbook ./Setup_IMM_Pools.yml` 
 3.	Create the UCS Server Profile Policies: `ansible-playbook ./Setup_IMM_Server_Policies.yml`
 4.	Create the UCS Server Profile Template: `ansible-playbook ./Setup_IMM_Server_Profile_Templates.yml`
