@@ -18,7 +18,7 @@ api_private_key: "{{ vault_intersight_api_private_key }}"
 # intersight_validate_certs: "false"
 # 
 # Intersight Resource Group Name. Please make sure it already exists.
-resource_group_name: "IAC_RG"
+resource_group_name: "Default"
 resource_group_description: "IAC Resource Group"
 # 
 # 
