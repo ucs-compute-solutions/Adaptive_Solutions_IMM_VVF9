@@ -77,7 +77,7 @@ breakout_server_ports:
 # This task sets up either 2 or 4 uplink ports in the port-channel.
 configure_network_uplink_full_ports: 'true'
 num_ports_in_pc: 2   # Set to 2 or 4
-uplink_port_channel_id_full: 11
+uplink_port_channel_id_full: 163
 uplink_port_channel_port_1: 63
 uplink_port_channel_port_2: 64
 #uplink_port_channel_port_3: 33
@@ -105,14 +105,14 @@ fc_breakout_pc_root_port_2: 36
 # FC Uplink Port-Channel on UCS-FI-6454, UCS-FI-64108, UCS-FI-6664, or UCS-FI-6653 - This sets up a port-channel
 # with either 2 or 4 ports.
 # If not using FC or configuring an FC port-channel with breakout port uplinks, set configure_fc_pc to false.
-configure_fc_pc: 'false'
-fc_fc_speed: 32 # Set to 16, 32, or 64 depending on model
+configure_fc_pc: 'true'
+fc_port_speed: 32 # Set to 16, 32, or 64 depending on model
 fc_num_ports_in_pc: 2 # Set to either 2 or 4.
 fc_pc_id: 11
 fc_pc_port_1: 25
 fc_pc_port_2: 26
-fc_pc_port_3: 3
-fc_pc_port_4: 4
+#fc_pc_port_3: 3
+#fc_pc_port_4: 4
 
 # FCoE Uplink Port-Channel - This port-channel is assumed to be a 2-port port-channel
 # from each FI. If more ports are needed, they can be added to the port policies from Intersight.
