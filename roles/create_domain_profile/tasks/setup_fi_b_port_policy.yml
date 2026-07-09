@@ -238,7 +238,7 @@
 			          "SlotId": 1
               }
 	          ],
-            "VsanId": "{{ vsan_A_id }}"
+            "VsanId": "{{ vsan_B_id }}"
         }
     when: (configure_fc == 'true') and (configure_fc_breakout_pc == 'true') and (num_fc_breakout_ports_in_pc == 4)
 
@@ -263,7 +263,7 @@
 			          "SlotId": 1
               }
 	          ],
-            "VsanId": "{{ vsan_A_id }}"
+            "VsanId": "{{ vsan_B_id }}"
         }
     when: (configure_fc == 'true') and (configure_fc_pc == 'true') and (fc_num_ports_in_pc == 2)
 
@@ -298,7 +298,7 @@
                 "SlotId": 1
               }
 	          ],
-            "VsanId": "{{ vsan_A_id }}"
+            "VsanId": "{{ vsan_B_id }}"
         }
     when: (configure_fc == 'true') and (configure_fc_pc == 'true') and (fc_num_ports_in_pc == 4)
 
