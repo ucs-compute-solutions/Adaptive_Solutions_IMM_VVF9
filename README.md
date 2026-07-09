@@ -27,7 +27,14 @@ Running through these steps and the subsequent Ansible playbooks will require an
 
 Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as an example within the CVD.  This will require the cisco.intersight ansible-galaxy collection described here:
 https://galaxy.ansible.com/ui/repo/published/cisco/intersight/
-
+Installation can be performed running: 
+```
+ansible-galaxy collection install cisco.intersight
+```
+If previously installed, an upgrade may be required and accomplished with: 
+```
+ansible-galaxy collection install cisco.intersight --upgrade
+```
 With an appropriate platform readied, the repository can be cloned from GitHub with `git clone https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9`
 
 ### Cisco Intersight API Access and Configuration
