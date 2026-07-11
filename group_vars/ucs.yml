@@ -162,13 +162,48 @@ description_of_fi_vsan_b_policy: "FI VSAN-B Policy"
 
 enable_vsan_trunking: false # Enable VSAN trunking between the FIs and Storage Switch. Set to true or false.
 
+name_of_san_connectivity_policy: "{{ prefix }}-{{ vic_type }}-VIC-SANCon"
+
+name_of_vhba_a: FC-A
+name_of_vhba_b: FC-B
+
+san_boot_device_1a_name: bhe-ctl1-a
+san_boot_target_1a_wwpn: 50:06:0e:80:34:12:5d:00
+
+san_boot_device_2a_name: bhe-ctl2-a
+san_boot_target_2a_wwpn: 50:06:0e:80:34:12:5d:10
+
+san_boot_device_1b_name: bhe-ctl1-b
+san_boot_target_1b_wwpn: 50:06:0e:80:34:12:5d:01
+
+san_boot_device_2b_name: bhe-ctl2-b
+san_boot_target_2b_wwpn: 50:06:0e:80:34:12:5d:11
+
+lun_id: 0
+
+# Domain and FC Network Policy variables for SAN-A
 vsan_A_name: 'Fabric-A'
 vsan_A_id: 101
 vsan_A_fcoe_vlan: 101
-#
+# FC Network Policy additional for SAN-A
+name_of_fc_network_policy_san_a: "{{ prefix}}-FC-Network-SAN-A_Policy"
+description_of_fc_network_policy_san_a: "SAN-A configuration for Fabric-A vHBA"
+
+# Domain and FC Network Policy variables for SAN-B
 vsan_B_name: 'Fabric-B'
 vsan_B_id: 102
 vsan_B_fcoe_vlan: 102
+
+# FC Network Policy additional for SAN-A
+name_of_fc_network_policy_san_b: "{{ prefix}}-FC-Network-SAN-B_Policy"
+description_of_fc_network_policy_san_b: "SAN-B configurationfor Fabric-B vHBA"
+
+# Fibre Channel QoS Policy
+name_of_fc_qos_policy: "{{ prefix }}-FC-QoS_Policy"
+
+# Fibre Channel Adapter Policy
+name_of_fc_adapter_policy: "{{ prefix }}-FC-Adapter_Policy"
+
 
 # Link Control UDLD Policy
 name_of_udld_policy: "{{ prefix }}-Link-Control-UDLD"
@@ -207,14 +242,14 @@ configure_iscsi: "false"
 # Configure Fibre Channel policies and profiles only when the value is set to true
 configure_fc: "true"
 
+
+
 # Configure Fibre Channel NVMe vHBAs; only works when the configure_fc is set to true
 configure_fc_nvme: "false"
 
-# Configure NVMe/TCP vNICs; only works when the configure_nvme_tcp is set to true
-configure_nvme_tcp: "true"
 
 # Configure Storage Policy if Using Local Boot
-configure_local_storage: "true"
+configure_local_storage: "false"
 
 # ##############################################################################
 #
@@ -225,6 +260,10 @@ configure_local_storage: "true"
 # Server CPU Type - set to Intel or AMD
 #server_cpu_type: "AMD"
 server_cpu_type: "Intel"
+
+# UCS Server generation for BIOS specification
+#
+server_generation: "M8" # Intel values currently M7 or M8 for covered BIOS
 
 # VIC Type - set to 4G for 4th Gen VICs or 5G for 5th Gen VICs 
 # Also add 4G or 5G to Server Profile Template Name
@@ -311,6 +350,9 @@ name_of_chassis_power_policy: "{{ prefix }}-Chassis-Power_Policy"
 # BIOS Policy 
 name_of_m8_bios_policy: "{{ prefix }}-{{ server_cpu_type }}-BIOS_M8_Policy"
 name_of_m7_bios_policy: "{{ prefix }}-{{ server_cpu_type }}-BIOS_M7_Policy"
+description_of_intel_m7_bios_policy: "M7 Intel recommended BIOS policies for Virtualization"
+description_of_intel_m8_bios_policy: "M8 Intel recommended BIOS policies for Virtualization"
+description_of_amd_m8_bios_policy: "M8 AMD recommended BIOS policies for Virtualization"
 
 # IMC Access Policy - Configures the KVM to be accessed In-Band
 # The in-band vlan must be enabled on the trunk between Nexus 9K and UCS FI
@@ -371,6 +413,9 @@ name_of_network_group_policy_for_vds: "{{ prefix }}-Ethernet-Network-Group-VM-Ne
 native_vlan_for_vds_vnic: 2
 allowed_vlans_for_vds_vnic: "119,1000,1101-1103"
 
+# Configure NVMe/TCP vNICs; only works when the configure_nvme_tcp is set to true
+configure_nvme_tcp: "false"
+
 # Ethernet Network Group Policy - VLANs details of vNIC assigned to IPStorage
 #name_of_network_group_policy_for_ipstorage_a: "{{ prefix }}-Network-Group-IPStorage_A_Policy"
 #name_of_network_group_policy_for_ipstorage_a: "{{ prefix }}-Ethernet-Network-Group-IPStorage_A_Policy"
@@ -401,7 +446,7 @@ allowed_vlans_for_vds_vnic: "119,1000,1101-1103"
 #name_of_nvme_tcp_lan_connectivity_policy: "{{ prefix }}-LAN-Connectivity-NVMe-TCP-{{ vic_type }}_Policy"
 #description_of_nvme_tcp_lan_connectivity_policy: "NVMe over TCP optionally including iSCSI"
 #
-name_of_fc_lan_connectivity_policy: "{{ prefix }}-LAN-Connectivity-FC-{{ vic_type }}_Policy"
+name_of_fc_lan_connectivity_policy: "{{ prefix }}-LAN-Connectivity-FC-Policy"
 
 # These vNIC names must be unique within use for the environment.  If these are specified within an existing LAN Connectivity Policy, this LAN Connectivity Policy creation will fail.  This behavior should be corrected at some point.
 
@@ -423,14 +468,14 @@ boot_mode: "Uefi"
 enable_uefi_secureboot: "true"
 
 # Boot Order Policy for Fibre Channel Boot
-#fc_boot_order_policy_name: "{{ prefix }}-FC-Boot-Order-{{ vic_type }}_Policy"
+fc_boot_order_policy_name: "{{ prefix }}-FC-Boot-Order-Policy"
 
 # Boot Order Policy for Local Channel Boot
 #local_boot_order_policy_name: "{{ prefix }}-Local-Boot-Order_Policy"
 #local_boot_order_policy_description: "Local Boot"
 #local_boot_device_name: "MStorBootVd"
 #local_boot_slot: "MRAID"
-#configure_local: 'true'
+configure_local: 'false'
 
 # Boot Order Policy
 

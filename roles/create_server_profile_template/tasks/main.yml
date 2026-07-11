@@ -22,6 +22,10 @@
 - name: Collect policy information for Service Profile Template
   ansible.builtin.include_tasks: gather_policy_info.yml
 
-- name: Create Server Profile Template storage
-  ansible.builtin.include_tasks: create_server_profile_template.yml
+- name: Create NVMe over TCP Server Profile Template storage
+  ansible.builtin.include_tasks: create_nvme_tcp_server_profile_template.yml
+  when: configure_nvme_tcp == 'true'
 
+- name: Create FC Server Profile Template storage
+  ansible.builtin.include_tasks: create_fc_server_profile_template.yml
+  when: configure_fc == 'true'
