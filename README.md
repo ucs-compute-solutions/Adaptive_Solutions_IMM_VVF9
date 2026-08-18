@@ -127,8 +127,10 @@ The steps that will need to have been completed include:
   
 Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as
 an example within the CVD. This will require the cisco.intersight ansible-galaxy collection described here: https://galaxy.ansible.com/ui/repo/published/cisco/intersight/
+UPDATE LINK ABOVE
 
 With the prerequisite steps complete, copy the yml files listed below from the repository root directory to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
+
 bhe_day0_expressd_interactive.yml
 bhe_day0_vsp_one_expressd_prompt_check.yml
 bhe_day0_vsp_one_create_boot_ldevs.yml
