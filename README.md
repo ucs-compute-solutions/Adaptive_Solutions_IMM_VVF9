@@ -164,7 +164,7 @@ used to validate an IP address.
 ### Hitachi Playbook Execution Prerequisites
 
 During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created..
-Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:
+Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
 "raidcom get parity_grp"
 
 In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to be used for the deployment.
@@ -172,20 +172,21 @@ In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group 
 ### Hitachi Playbook Execution Sequence
 
 NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation.
-If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
-with your customization values.
-Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.
+1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
+with your customization values.  
+2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
 Default variable values can be used. Prompts are available to override some variables.
 
 ### Hitachi Post Configuration Playbook status
-Execution of the playbooks will result in the configuration of the following elements.
-FC-SCSI Port configuration.
-DDP Pools
-Register servers and create array port paths.
-Boot LDEVs.
-Shared LDEVS.
-Attach LDEVs to servers.
-Attach nicknames to server HBAs to identify their fabric association.
+
+Execution of the playbooks will result in the configuration of the following elements:  
+1. FC-SCSI Port configuration.  
+2. DDP Pools.   
+3. Register servers and create array port paths.  
+4. Boot LDEVs.  
+5. Shared LDEVS.  
+6. Attach LDEVs to servers.  
+7. Attach nicknames to server HBAs to identify their fabric association.  
 
 
 ## Hitachi Cisco ICO custom workflows for Hitachi Virtual Storage Platform(VSP) for NVMe-oF Configuration
