@@ -149,7 +149,7 @@ Execution of the playbooks will result in the configuration of the following ele
 7. Attach nicknames to server HBAs to identify their fabric association.  
 
 
-## Hitachi Cisco ICO custom workflows for Hitachi Virtual Storage Platform(VSP) for NVMe-oF Configuration
+## Hitachi Cisco ICO custom workflows for Hitachi Virtual Storage Platform(VSP) for FC-SCSI Configuration
 
 The following steps must be completed prior to the execution of the Hitachi ICO custom workflows for configuring Hitachi VSP FC-SCSI storage.
 
@@ -159,10 +159,51 @@ The following steps must be completed prior to the execution of the Hitachi ICO 
 
 To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_workflows.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) 
 
-### Hitachi ICO Workflows Execution Sequence
+Four workflows are available to configure the storage requirements and should be executed in the order listed below:
 
-The following steps must be executed once custom ICO workflow has been imported:
-1. Select Hitachi_VSP_NVMe_OF_Sequence.
+1. VSI – New Hitachi Volume for Pool Volume with Format
+2. VSI – New Hitachi Pool
+3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server  
+4. VSI – New Hitachi LUN ID Cluster
+
+### Hitachi ICO Workflows Execution Sequence for New Hitachi Volume for Pool Volume with Format
+
+Purpose  
+Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
+
+Prerequisites
+
+•	Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.
+•	Storage parity groups must already exist on the selected storage array.
+•	Parity groups must be created using:
+  o	Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM)
+  o	Embedded Administrator / Element Manager
+•	Workflow is configured to mirror the reference VSI deployment architecture.
+
+Required Workflow Inputs  
+
+Parameter	                    Description  
+Storage Array 	              Target Hitachi VSP storage system where volumes will be created  
+Parity Group	                Existing parity group used for volume creation  
+Capacity Override (Optional)	Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded.  
+
+
+Workflow Outputs
+
+•	Creates eight (8) BASIC Pool Volumes with no Data Reduction Mode.  
+•	Creates 2,640 GB capacity per LDEV.  
+•	Performs Quick Format (QFMT) on all volumes.  
+
+Workflow Considerations
+
+•	Record all generated LDEV IDs from the workflow execution logs.
+•	These LDEV IDs are required for Workflow 2.
+•	To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.
+•	Verify successful volume formatting before proceeding.
+
+
+The following steps must be executed once the custom ICO workflow has been imported:
+1. Select VSI - New Hitachi Volume for Pool Volumes with format.
 2. Click Execute.
 3. Define the following inputs:
    a. Select Storage Device.
