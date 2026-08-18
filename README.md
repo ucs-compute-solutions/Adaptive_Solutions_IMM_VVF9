@@ -76,46 +76,6 @@ To execute the example automation in this repo, update the inventory and variabl
 
 Execution of the playbooks in these repositories set up a Server Profile Template in Intersight. After successfully executing the playbooks, one or more server profiles can easily derived and attached to the compute node from Intersight dashboard. 
 
-## Hitachi VSP One Block Storage Modules for Red Hat Ansible
-
-The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for configuration of the VSP One Block storage requirements. 
-
-The steps that will need to have been completed include:
-
-- [VSP One Block 24 Installation](https://docs.hitachivantara.com/r/en-us/virtual-storage-platform-one-block/a3-04-0x/mk-23vsp1b008/installing-your-storage-system)
-- [Configuration of VSP One Block NVMe/TCP ports](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/UCS_CVDs/ucs_hitachi_adaptive_solutions_nvme_tcp.html#NVMeTCPPortsonHitachiVSPOneBlock)
-- [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 3.5](https://docs.hitachivantara.com/v/u/en-us/adapters-and-drivers/3.5.x/mk-92adptr149)
-
-Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as an example within the CVD. This will require the cisco.intersight ansible-galaxy collection described here: [https://galaxy.ansible.com/ui/repo/published/cisco/intersight/](https://galaxy.ansible.com/ui/repo/published/cisco/intersight/)
-
-With the prerequisite steps complete, the file VSP_NVMe_TCP_rev2.yml from the repository root directory will need to be copied to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct
-
-### Hitachi Storage Modules Access and Configuration
-
-The Linux Ansible control server will be used to execute the Adaptive Solutions NVMe/TCP playbooks for storage. Post installation of the Hitachi VSP One Block Storage Modules for Red Hat Ansible 3.5, all Hitachi playbooks are available at the following location: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks
-
-### Hitachi Setup Inventory and Variables 
-1. Adjustable variables are primarily in the base group_vars directory.
-2. All other required variables will be set in the playbook.
-
-### Hitachi Playbook Execution Sequence
-
-NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation.
-1.	In the playbooks directory, update the VSP_NVMe_TCP_rev2.yml file with the required variables.
-2.	Invoke the playbook with the following command:
-ansible-playbook VSP_NVMe_TCP_rev2.yml
-
-### Hitachi Post Configuration Playbook status
-
-Execution of the playbooks will result in the creation on the VSP One Block of the following elements.
-1.  DDP Pool.
-2.	NVMe subsystem.
-3.	Assigning NVMe/TCP port to the NVMe subsystem.
-4.	Adding host NQNs to the NVMe subsystem.
-5.	Creation of an ldev.
-6.	Assigning an NVMe Namespace ID to the ldev.
-7.	Assigning NVMe/TCP port path to the NVMe Namespace ID of the ldev.
-
 ### Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
 
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for
@@ -177,7 +137,7 @@ NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, in
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
    Default variable values can be used. Prompts are available to override some variables.
 
-### Hitachi Post Configuration Playbook status
+### Hitachi Post Configuration Playbook Status
 
 Execution of the playbooks will result in the configuration of the following elements:  
 1. FC-SCSI Port configuration.  
