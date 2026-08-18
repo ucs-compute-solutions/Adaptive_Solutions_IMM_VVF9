@@ -163,9 +163,11 @@ used to validate an IP address.
 
 ### Hitachi Playbook Execution Prerequisites
 
-In the CVD Deployment Guide two Raid6 parity groups have been created.
-Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:***********
-- Update the parity group ids used in bhe_day0_vsp_one_create_parity_pool.yml
+During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created..
+Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:
+"raidcom get parity_grp"
+
+In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to be used for the deployment.
 
 ### Hitachi Playbook Execution Sequence
 
