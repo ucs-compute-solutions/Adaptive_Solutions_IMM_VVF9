@@ -119,11 +119,15 @@ Execution of the playbooks will result in the creation on the VSP One Block of t
 ### Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for
 configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.
+
 The steps that will need to have been completed include:
-VSP One Block High End Installation and Configuration 
-Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7
+
+* [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest) 
+* [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
+  
 Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as
 an example within the CVD. This will require the cisco.intersight ansible-galaxy collection described here: https://galaxy.ansible.com/ui/repo/published/cisco/intersight/
+
 With the prerequisite steps complete, copy the yml files listed below from the repository root directory to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 bhe_day0_expressd_interactive.yml
 bhe_day0_vsp_one_expressd_prompt_check.yml
@@ -135,12 +139,14 @@ bhe_day0_vsp_one_hg_rename_wwn.yml
 bhe_day0_vsp_one_port.yml
 bhe_day0_vsp_one_server_multiple_hbas.yml
 
-Hitachi Storage Modules Access and Configuration
+### Hitachi Storage Modules Access and Configuration
+
 The Linux Ansible control server will be used to execute the Adaptive Solutions BHE playbooks for storage.
 Post installation of the Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7, all Hitachi playbooks
 are available at the following location: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks
 
-Hitachi Storage Module Usage
+### Hitachi Storage Module Usage
+
 Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
 used to validate an IP address.
 All playbooks have been modified to match the variable values used in the CVD Deployment Guide.
@@ -153,18 +159,21 @@ for the imported playbooks
 Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
 .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars
 
-Hitachi Playbook Execution Prerequisites
+### Hitachi Playbook Execution Prerequisites
+
 In the CVD Deployment Guide two Raid6 parity groups have been created.
 Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:***********
 - Update the parity group ids used in bhe_day0_vsp_one_create_parity_pool.yml
 
-Hitachi Playbook Execution Sequence
+### Hitachi Playbook Execution Sequence
+
 NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation.
 If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
 with your customization values.
 Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.
 Default variable values can be used. Prompts are available to override some variables.
-Hitachi Post Configuration Playbook status
+
+### Hitachi Post Configuration Playbook status
 Execution of the playbooks will result in the configuration of the following elements.
 FC-SCSI Port configuration.
 DDP Pools
