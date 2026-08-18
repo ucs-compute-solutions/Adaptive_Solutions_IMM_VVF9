@@ -83,8 +83,8 @@ configuration of the Hitachi Virtual Storage Platform One Block High End (VSP On
 
 The steps that will need to have been completed include:
 
-1. * [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest) 
-2. * [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
+1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest) 
+2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
   
 Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as
 an example within the CVD. This will require the cisco.intersight ansible-galaxy collection described here: https://galaxy.ansible.com/ui/repo/published/cisco/intersight/
