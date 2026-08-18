@@ -168,63 +168,51 @@ Four workflows are available to configure the storage requirements and should be
 
 ### Hitachi ICO Workflows Execution Sequence for New Hitachi Volume for Pool Volume with Format
 
-Purpose  
+## Purpose  
 Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
 
-Prerequisites
+## Prerequisites
 
-•	Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.
-•	Storage parity groups must already exist on the selected storage array.
-•	Parity groups must be created using:
-  o	Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM)
-  o	Embedded Administrator / Element Manager
-•	Workflow is configured to mirror the reference VSI deployment architecture.
+1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
+2. Storage parity groups must already exist on the selected storage array.  
+3. Parity groups must be created using:  
+   a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM)  
+   b. Embedded Administrator / Element Manager  
+4. Workflow is configured to mirror the reference VSI deployment architecture.
 
-Required Workflow Inputs  
+## Required Workflow Inputs  
 
 Parameter	                    Description  
 Storage Array 	              Target Hitachi VSP storage system where volumes will be created  
 Parity Group	                Existing parity group used for volume creation  
 Capacity Override (Optional)	Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded.  
 
+## Workflow Outputs
 
-Workflow Outputs
+1. Creates eight (8) BASIC Pool Volumes with no Data Reduction Mode.  
+2. Creates 2,640 GB capacity per LDEV.    
+3. Performs Quick Format (QFMT) on all volumes.  
 
-•	Creates eight (8) BASIC Pool Volumes with no Data Reduction Mode.  
-•	Creates 2,640 GB capacity per LDEV.  
-•	Performs Quick Format (QFMT) on all volumes.  
+## Workflow Considerations
 
-Workflow Considerations
+1. Record all generated LDEV IDs from the workflow execution logs.  
+2. These LDEV IDs are required for Workflow 2.  
+3. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.  
+4. Verify successful volume formatting before proceeding.  
 
-•	Record all generated LDEV IDs from the workflow execution logs.
-•	These LDEV IDs are required for Workflow 2.
-•	To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.
-•	Verify successful volume formatting before proceeding.
+## The following steps must be executed once the custom ICO workflow has been imported:
 
-
-The following steps must be executed once the custom ICO workflow has been imported:
 1. Select VSI - New Hitachi Volume for Pool Volumes with format.
 2. Click Execute.
 3. Define the following inputs:
-   a. Select Storage Device.
-   b. Define Pool ID.
-   c. Define Volume Label.
-   d. Define data reduction mode.
-   e. Define LDEV size and unit.
-   f. Define NVM Subsystem ID
-   g. Define NVM Subsystem Name
-   h. Define Host Mode
-   i. Check the selection to enable Namespace security settings
-   j. Define VSP Port ID
-   k. Define Host NQN.
-   l. Define Namespace ID
+   a. Select Storage Array.
+   b. Select Parity Group.
+   c. Capacity Override (Optional
 
 ### Hitachi Post-workflow status
 
-Execution of the workflow will result in the creation on the VSP One Block of the following elements.
-1.	Creating storage NVM subsystem ID/Name and configuring host mode settings. 
-2.	Registering a storage array port to the newly created NVM subsystem ID.
-3.	Adding host NQNs to the newly created NVM subsystem ID.
-4.	Creating a storage volume with optional capacity savings options. 
-5.	Creating storage volume namespace ID.
-6.	Creating namespace ID path settings.
+Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
+1.	Eight BASIC Pool Volumes with no Data Reduction Mode have been created.
+2.	2640 GB Capacity per LDEV has been created.  
+3.	Quick Format (QFMT) has been performed on all volumes.
+
