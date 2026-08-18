@@ -149,7 +149,7 @@ Execution of the playbooks will result in the configuration of the following ele
 7. Attach nicknames to server HBAs to identify their fabric association.  
 
 
-## Hitachi Cisco ICO custom workflows for Hitachi Virtual Storage Platform(VSP) for FC-SCSI Configuration
+#### Hitachi Cisco ICO custom workflows for Hitachi Virtual Storage Platform(VSP) for FC-SCSI Configuration
 
 The following steps must be completed prior to the execution of the Hitachi ICO custom workflows for configuring Hitachi VSP FC-SCSI storage.
 
