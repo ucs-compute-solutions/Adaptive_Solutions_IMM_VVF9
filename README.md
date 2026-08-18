@@ -116,7 +116,7 @@ Execution of the playbooks will result in the creation on the VSP One Block of t
 6.	Assigning an NVMe Namespace ID to the ldev.
 7.	Assigning NVMe/TCP port path to the NVMe Namespace ID of the ldev.
 
-Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible
+### Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for
 configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.
 The steps that will need to have been completed include:
