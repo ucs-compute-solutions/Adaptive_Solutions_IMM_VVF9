@@ -76,7 +76,7 @@ To execute the example automation in this repo, update the inventory and variabl
 
 Execution of the playbooks in these repositories set up a Server Profile Template in Intersight. After successfully executing the playbooks, one or more server profiles can easily derived and attached to the compute node from Intersight dashboard. 
 
-### Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
+## Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
 
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for
 configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.
@@ -166,7 +166,7 @@ Four workflows are available to configure the storage requirements and should be
 3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server  
 4. VSI – New Hitachi LUN ID Cluster
 
-### Hitachi ICO Workflows Execution Sequence for New Hitachi Volume for Pool Volume with Format
+### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Volume for Pool Volume with Format
 
 #### Purpose  
 Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
@@ -216,3 +216,52 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 2.	2640 GB Capacity per LDEV has been created.  
 3.	Quick Format (QFMT) has been performed on all volumes.
 
+### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool (Stopped Here)
+
+#### Purpose  
+Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
+
+#### Prerequisites
+
+1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
+2. Storage parity groups must already exist on the selected storage array.  
+3. Parity groups must be created using:  
+   a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM)  
+   b. Embedded Administrator / Element Manager  
+4. Workflow is configured to mirror the reference VSI deployment architecture.
+
+#### Required Workflow Inputs  
+
+Parameter	                    Description  
+Storage Array 	              Target Hitachi VSP storage system where volumes will be created  
+Parity Group	                Existing parity group used for volume creation  
+Capacity Override (Optional)	Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded.  
+
+#### Workflow Outputs
+
+1. Creates eight (8) BASIC Pool Volumes with no Data Reduction Mode.  
+2. Creates 2,640 GB capacity per LDEV.    
+3. Performs Quick Format (QFMT) on all volumes.  
+
+#### Workflow Considerations
+
+1. Record all generated LDEV IDs from the workflow execution logs.  
+2. These LDEV IDs are required for Workflow 2.  
+3. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.  
+4. Verify successful volume formatting before proceeding.  
+
+#### The following steps must be executed once the custom ICO workflow has been imported:
+
+1. Select VSI - New Hitachi Volume for Pool Volumes with format.
+2. Click Execute.
+3. Define the following inputs:
+   a. Select Storage Array.
+   b. Select Parity Group.
+   c. Capacity Override (Optional
+
+#### Hitachi Post-workflow status
+
+Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
+1.	Eight BASIC Pool Volumes with no Data Reduction Mode have been created.
+2.	2640 GB Capacity per LDEV has been created.  
+3.	Quick Format (QFMT) has been performed on all volumes.
