@@ -216,52 +216,64 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 2.	2640 GB Capacity per LDEV has been created.  
 3.	Quick Format (QFMT) has been performed on all volumes.
 
-### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool (Stopped Here)
+### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool 
 
-#### Purpose  
-Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
+#### Purpose   
+
+Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously created and formatted BASIC LDEVs.
 
 #### Prerequisites
 
-1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
-2. Storage parity groups must already exist on the selected storage array.  
-3. Parity groups must be created using:  
-   a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM)  
-   b. Embedded Administrator / Element Manager  
-4. Workflow is configured to mirror the reference VSI deployment architecture.
+1. Workflow 1 completed successfully.
+2. BASIC LDEVs have been created and formatted.
+3. Required LDEV IDs have been documented from Workflow 1.
+4. Target storage array is onboarded and manageable through Cisco Intersight.
 
 #### Required Workflow Inputs  
 
 Parameter	                    Description  
-Storage Array 	              Target Hitachi VSP storage system where volumes will be created  
-Parity Group	                Existing parity group used for volume creation  
-Capacity Override (Optional)	Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded.  
+Storage Array	                Target Hitachi VSP storage system where the pool will be created  
+Pool ID                     	Available HDP Pool ID  
+Pool Name	                    User-defined pool name  
+Pool Volumes	                LDEV IDs created in Workflow 1  
+Warning Threshold	            Pool utilization warning threshold, predefined as 70%  
+Depletion Threshold	          Pool utilization depletion threshold predefined as 80%  
+Suspend Snapshot (Optional) 	Snapshot behavior when depletion threshold is reached, default set to false  
 
 #### Workflow Outputs
 
-1. Creates eight (8) BASIC Pool Volumes with no Data Reduction Mode.  
-2. Creates 2,640 GB capacity per LDEV.    
-3. Performs Quick Format (QFMT) on all volumes.  
+1. Creates a new HDP Pool.  
+2. Assigns specified BASIC pool LDEVs to the pool.  
+3. Applies warning and depletion thresholds.    
+4. Applies optional snapshot suspension settings.  
 
 #### Workflow Considerations
+  
+1. Pool Type is hardcoded as HDP.   
+2. Recommended Warning Threshold is 70%.  
+3. Recommended Depletion Threshold is 80%.  
+4. Pool ID availability must be verified before execution.  
+5. Multiple pool volumes may be added using the "+" option.  
+6. Validate pool capacity and health after creation.
 
-1. Record all generated LDEV IDs from the workflow execution logs.  
-2. These LDEV IDs are required for Workflow 2.  
-3. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.  
-4. Verify successful volume formatting before proceeding.  
+#### The following steps must be executed once the custom ICO workflow has been imported: (Stopped Here)
 
-#### The following steps must be executed once the custom ICO workflow has been imported:
-
-1. Select VSI - New Hitachi Volume for Pool Volumes with format.
+1. Select VSI - New Hitachi Pool 
 2. Click Execute.
 3. Define the following inputs:
-   a. Select Storage Array.
-   b. Select Parity Group.
-   c. Capacity Override (Optional
+   a. Select Storage Array
+   b. Enter Pool ID 
+   c. Enter Pool Name
+   d. Enter Pool Volumes
+   e. Enter Warning Threshold (Optional)
+   f. Enter Depletion Threshold (Optional)
+   g. Enter Suspend Snapshot (Optional)
 
 #### Hitachi Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1.	Eight BASIC Pool Volumes with no Data Reduction Mode have been created.
-2.	2640 GB Capacity per LDEV has been created.  
-3.	Quick Format (QFMT) has been performed on all volumes.
+1. Created a new HDP Pool.
+2. Assigned specified BASIC pool LDEVs to the pool.
+3. Applied warning and depletion thresholds.  
+4. Applied optional snapshot suspension settings.
+
