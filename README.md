@@ -149,17 +149,17 @@ are available at the following location: $HOME/.ansible/collections/ansible_coll
 
 ### Hitachi Storage Module Usage
 
-Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
-used to validate an IP address.
-All playbooks have been modified to match the variable values used in the CVD Deployment Guide.
-Modifying the playbooks to deviate from the default CVD Deployment Guide variable values must be
-completed in the individual playbooks.
-Playbooks are interdependent. For example, LDEV ID values must be used consistently for the CVD Deployment.
-Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks.
-Playbook "bhe_day0_expressd_interactive.yml" will be used to enter the Hitachi VSP One BHE userid and password
-for the imported playbooks
-Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
-.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars
+1. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
+used to validate an IP address.  
+2. All playbooks have been modified to match the variable values used in the CVD Deployment Guide.  
+3. Modifying the playbooks to deviate from the default CVD Deployment Guide variable values must be
+   completed in the individual playbooks.  
+4. Playbooks are interdependent. For example, LDEV ID values must be used consistently for the CVD Deployment.  
+5. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks.  
+6. Playbook "bhe_day0_expressd_interactive.yml" will be used to enter the Hitachi VSP One BHE userid and password
+   for the imported playbooks.  
+7. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
+   .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars  
 
 ### Hitachi Playbook Execution Prerequisites
 
