@@ -116,14 +116,15 @@ Execution of the playbooks will result in the creation on the VSP One Block of t
 6.	Assigning an NVMe Namespace ID to the ldev.
 7.	Assigning NVMe/TCP port path to the NVMe Namespace ID of the ldev.
 
-### Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible
+### Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
+
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for
 configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.
 
 The steps that will need to have been completed include:
 
-* [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest) 
-* [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
+1. * [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest) 
+2. * [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
   
 Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as
 an example within the CVD. This will require the cisco.intersight ansible-galaxy collection described here: https://galaxy.ansible.com/ui/repo/published/cisco/intersight/
@@ -143,14 +144,14 @@ bhe_day0_vsp_one_server_multiple_hbas.yml
 
 ### Hitachi Storage Modules Access and Configuration
 
-The Linux Ansible control server will be used to execute the Adaptive Solutions BHE playbooks for storage.
-Post installation of the Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7, all Hitachi playbooks
-are available at the following location: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks
+1. The Linux Ansible control server will be used to execute the Adaptive Solutions BHE playbooks for storage.  
+2. Post installation of the Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7, all Hitachi playbooks
+   are available at the following location: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks
 
 ### Hitachi Storage Module Usage
 
 1. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
-used to validate an IP address.  
+   used to validate an IP address.  
 2. All playbooks have been modified to match the variable values used in the CVD Deployment Guide.  
 3. Modifying the playbooks to deviate from the default CVD Deployment Guide variable values must be
    completed in the individual playbooks.  
@@ -163,19 +164,18 @@ used to validate an IP address.
 
 ### Hitachi Playbook Execution Prerequisites
 
-During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created..
-Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
-"raidcom get parity_grp"
-
-In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to be used for the deployment.
+1. During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created.
+   Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
+    "raidcom get parity_grp"
+2. In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to be used for the deployment.
 
 ### Hitachi Playbook Execution Sequence
 
 NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation.
 1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
-with your customization values.  
+   with your customization values.  
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
-Default variable values can be used. Prompts are available to override some variables.
+   Default variable values can be used. Prompts are available to override some variables.
 
 ### Hitachi Post Configuration Playbook status
 
