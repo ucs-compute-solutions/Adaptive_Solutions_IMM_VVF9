@@ -85,22 +85,19 @@ The steps that will need to have been completed include:
 
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest) 
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
-  
-Invocation of the playbooks through Ansible can occur from a number of differing platforms, a Linux system is used as
-an example within the CVD. This will require the cisco.intersight ansible-galaxy collection described here: https://galaxy.ansible.com/ui/repo/published/cisco/intersight/
-UPDATE LINK ABOVE
+3. Completed installation of the cisco.intersight ansible-galaxy collection. Refer to the Cisco and Adaptive Solutions for Converged
+   Infrastructure IMM configuration with Ansible section in this READMe.md file.
+4. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:       $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
-With the prerequisite steps complete, copy the yml files listed below from the repository root directory to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
-
-bhe_day0_expressd_interactive.yml  
-bhe_day0_vsp_one_expressd_prompt_check.yml  
-bhe_day0_vsp_one_create_boot_ldevs.yml  
-bhe_day0_vsp_one_create_parity_pool.yml  
-bhe_day0_vsp_one_create_shared_ldev.yml  
-bhe_day0_vsp_one_hg_add_luns_to_hg.yml  
-bhe_day0_vsp_one_hg_rename_wwn.yml  
-bhe_day0_vsp_one_port.yml  
-bhe_day0_vsp_one_server_multiple_hbas.yml  
+   bhe_day0_expressd_interactive.yml  
+   bhe_day0_vsp_one_expressd_prompt_check.yml  
+   bhe_day0_vsp_one_create_boot_ldevs.yml  
+   bhe_day0_vsp_one_create_parity_pool.yml  
+   bhe_day0_vsp_one_create_shared_ldev.yml  
+   bhe_day0_vsp_one_hg_add_luns_to_hg.yml  
+   bhe_day0_vsp_one_hg_rename_wwn.yml  
+   bhe_day0_vsp_one_port.yml  
+   bhe_day0_vsp_one_server_multiple_hbas.yml  
 
 ### Hitachi Storage Modules Access and Configuration
 
