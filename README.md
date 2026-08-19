@@ -166,7 +166,7 @@ Four workflows are available to configure the storage requirements and should be
 3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server  
 4. VSI – New Hitachi LUN ID Cluster
 
-### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Volume for Pool Volume with Format
+### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Volume for Pool Volume with Format ***************************************************************
 
 #### Purpose  
 Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
@@ -201,7 +201,9 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 3. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.  
 4. Verify successful volume formatting before proceeding.  
 
-#### The following steps must be executed once the custom ICO workflow has been imported:
+#### Workflow Execution  
+
+The following steps must be executed once the custom ICO workflow has been imported:
 
 1. Select VSI - New Hitachi Volume for Pool Volumes with format.
 2. Click Execute.
@@ -217,7 +219,7 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 2.	2640 GB Capacity per LDEV has been created.  
 3.	Quick Format (QFMT) has been performed on all volumes.
 
-### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool 
+### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool *******************************************************************************************
 
 #### Purpose   
 
@@ -247,10 +249,10 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 1. Creates a new HDP Pool.  
 2. Assigns specified BASIC pool LDEVs to the pool.  
 3. Applies warning and depletion thresholds.    
-4. Applies optional snapshot suspension settings.  
+4. Applies optional snapshot suspension settings.
 
 #### Workflow Considerations
-  
+
 1. Pool Type is hardcoded as HDP.   
 2. Recommended Warning Threshold is 70%.  
 3. Recommended Depletion Threshold is 80%.  
@@ -258,7 +260,9 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 5. Multiple pool volumes may be added using the "+" option.  
 6. Validate pool capacity and health after creation.
 
-#### The following steps must be executed once the custom ICO workflow has been imported:   
+#### Workflow Execution 
+
+The following steps must be executed once the custom ICO workflow has been imported:
 
 1. Select VSI - New Hitachi Pool 
 2. Click Execute.
@@ -266,20 +270,20 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
    a. Select Storage Array
    b. Enter Pool ID 
    c. Enter Pool Name
-   d. Enter Pool Volumes
-   e. Enter Warning Threshold (Optional)
-   f. Enter Depletion Threshold (Optional)
+   d. Enter Pool Volumes 
+   e. Enter Warning Threshold
+   f. Enter Depletion Threshold
    g. Enter Suspend Snapshot (Optional)
 
 #### Hitachi Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1. Created a new HDP Pool.
-2. Assigned specified BASIC pool LDEVs to the pool.
-3. Applied warning and depletion thresholds.  
+1. Boot volume per UCS server. 
+2. Host groups per server. 
+3. Applied warn
 4. Applied optional snapshot suspension settings.
 
-### Hitachi ICO Workflows Execution Sequence for VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server
+### Hitachi ICO Workflows Execution Sequence for VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server ******************************************************
 
 #### Purpose   
 
@@ -298,45 +302,57 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 | --- | --- |  
 | Storage Array |	                  Target Hitachi VSP storage system where the pool will be created |   
 | Pool ID |                        	Available HDP Pool ID | 
-| Pool Name | 	                    User-defined pool name |  
-| Pool Volumes | 	                  LDEV IDs created in Workflow 1 |    
-| Warning Threshold | 	            Pool utilization warning threshold, predefined as 70% |   
-| Depletion Threshold |             Pool utilization depletion threshold predefined as 80% |   
-| Suspend Snapshot (Optional) |   	Snapshot behavior when depletion threshold is reached, default set to false |  
+| Port ID |                        	Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
+| Host Mode Options | 	            Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |  
+| Host Group Number  | 	            Users must define Host Group Number, initial state predefines 1, must be iterated based on number of servers deployed  |    
+| Host Group Name  | 	              %User defined Host Group Name, nomenclature predefined per fabric  |   
+| UCS Fabric A WWPNs |              Server WWPNs for Fabric A  |   
+| UCS Fabric B WWPNs |   	          Server WWPNs for Fabric B  |    
+| Volume Label |                 	  Boot volume naming convention |  
 
 #### Workflow Outputs
 
-1. Creates a new HDP Pool.  
-2. Assigns specified BASIC pool LDEVs to the pool.  
-3. Applies warning and depletion thresholds.    
-4. Applies optional snapshot suspension settings.  
+1. Creates Boot LDEV.   
+2. Creates 4 Host Groups per UCS Server.   
+3. Registers Fabric A WWPNs based on VSP port connections.   
+4. Registers Fabric B WWPNs based on VSP port connections.     
+5. Applies predefined Host Mode (VMware Extension).   
+6. Applies predefined Host Mode Options (54, 63, 68, 110).   
+7. Allocates Boot LDEV to the server.   
 
 #### Workflow Considerations
-  
-1. Pool Type is hardcoded as HDP.   
-2. Recommended Warning Threshold is 70%.  
-3. Recommended Depletion Threshold is 80%.  
-4. Pool ID availability must be verified before execution.  
-5. Multiple pool volumes may be added using the "+" option.  
-6. Validate pool capacity and health after creation.
 
-#### The following steps must be executed once the custom ICO workflow has been imported: (Stopped Here)
+1. Host Mode and Host Mode Options are hardcoded.   
+2. Boot volume size is hardcoded at 200 GB.   
+3. Host Group number 1 is hardcoded, for N+1 iterations admins must define available Host Group ID based on allocated ports.   
+4. Data Reduction Mode is hardcoded as Compression and Deduplication.   
+5. DRS Volume is enabled by default. 
+6. Validate host group creation and LDEV presentation following workflow completion.
+7. This workflow provisions a single UCS server.
+8. To replicate the reference VSI deployment:
+   a. Execute the workflow four times.
+   b. One execution of this workflow is required per UCS Server.
+   
+#### Workflow Execution  
 
-1. Select VSI - New Hitachi Pool 
+The following steps must be executed once the custom ICO workflow has been imported: 
+
+1. Select VSI - Hitachi VSP Host Group and Boot Path Creation to UCS Server
 2. Click Execute.
 3. Define the following inputs:
    a. Select Storage Array
    b. Enter Pool ID 
-   c. Enter Pool Name
-   d. Enter Pool Volumes
-   e. Enter Warning Threshold (Optional)
-   f. Enter Depletion Threshold (Optional)
-   g. Enter Suspend Snapshot (Optional)
-
+   c. Enter Port ID  
+   d. Enter Host Mode Options (predefined)  
+   e. Enter Host Group Number   
+   f. Enter UCS Fabric A WWPNs
+   g. Enter UCS Fabric B WWPNs
+   h. Enter Volume Label
+  
 #### Hitachi Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1. Created a new HDP Pool.
-2. Assigned specified BASIC pool LDEVs to the pool.
-3. Applied warning and depletion thresholds.  
-4. Applied optional snapshot suspension settings.
+1. Boot volume per UCS server. 
+2. Host groups per server. 
+3. WWPN registration per server. 
+4. LUN presentation for a UCS server.
