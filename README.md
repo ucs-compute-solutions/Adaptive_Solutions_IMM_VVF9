@@ -212,7 +212,7 @@ The following steps must be executed once the custom ICO workflow has been impor
    b. Select Parity Group.  
    c. Capacity Override (Optional).   
 
-#### Hitachi Post-workflow status
+#### Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
 1.	Eight BASIC Pool Volumes with no Data Reduction Mode have been created.
@@ -275,7 +275,7 @@ The following steps must be executed once the custom ICO workflow has been impor
    f. Enter Depletion Threshold  
    g. Enter Suspend Snapshot (Optional)  
 
-#### Hitachi Post-workflow status
+#### Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
 1. Boot volume per UCS server. 
@@ -349,10 +349,73 @@ The following steps must be executed once the custom ICO workflow has been impor
    g. Enter UCS Fabric B WWPNs  
    h. Enter Volume Label  
   
-#### Hitachi Post-workflow status
+#### Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
 1. Boot volume per UCS server. 
 2. Host groups per server. 
 3. WWPN registration per server. 
 4. LUN presentation for a UCS server.
+
+### Hitachi ICO Workflow 4 Execution Sequence for VSI – New Hitachi LUN ID Cluster **  
+
+#### Purpose   
+
+Automate creation and allocation of shared VMFS datastore volumes to all servers within a VMware cluster.   
+
+#### Prerequisites
+
+1. Workflow 3 completed successfully.
+2. Host Groups exist on the selected storage array.   
+3. SAN connectivity is operational.
+4. All server WWPNs have been registered.    
+5. Target storage array is onboarded and manageable through Cisco Intersight.
+  
+#### Required Workflow Inputs  
+
+| Parameter |	                      Description |    
+| --- | --- |  
+| Storage Array |	                  Target Hitachi VSP storage system where the pool will be created |   
+| Storage Pool |                    Existing HDP Pool used for datastore allocation, Pool ID 1 is predefined. | 
+| Datastore Volume Size |           Capacity of the VMFS datastore 10Tb is predefined   |   
+| Volume Label |                 	  Datastore naming convention, Application_VMFS_Volume is predefined |    
+| Target Host Groups | 	            Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
+| Data Reduction Mode  | 	          Compression & deduplication and DRS predefined   |      
+
+#### Workflow Outputs
+
+1. Creates VMFS datastore LDEV(s).   
+2. Allocates datastore volume(s) to all specified Host Groups.   
+3. Assigns LUN IDs.  
+4. Presents datastore volumes across all configured server paths using LUN ID 1 predefined.    
+
+#### Workflow Considerations
+
+1. Verify datastore visibility from all ESXi hosts.   
+2. Validate VMware multipathing functionality.   
+3. Confirm datastore discovery within vCenter.   
+4. Verify consistent presentation across Fabric A and Fabric B.   
+5. Ensure adequate pool capacity exists before execution. 
+6. For usage of workflow after LUN ID one has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow.   
+   
+#### Workflow Execution  
+
+The following steps must be executed once the custom ICO workflow has been imported: 
+
+1. Select VSI - New Hitachi LUN ID Cluster. 
+2. Click Execute.
+3. Define the following inputs:  
+   a. Select Storage Array  
+   b. Enter Storage Pool     
+   c. Enter Datastore Volume Size      
+   d. Enter Volume Label    
+   e. Enter Target Host Groups  
+   f. Enter Data Reduction Mode
+  
+#### Post-workflow status
+
+Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
+1. VMFS datastore LDEV(s).  
+2. LDEV allocation to all specified Host Groups.
+3. LUN ID 1 consistently presented to all specified Host Groups. 
+4. LUN ID 1 discoverable on vCenter.
