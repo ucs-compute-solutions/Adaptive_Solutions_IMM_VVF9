@@ -78,8 +78,8 @@ Execution of the playbooks in these repositories set up a Server Profile Templat
 
 ## Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
 
-The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible playbooks for
-configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.
+The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible sample playbooks for
+configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.  
 
 The steps that will need to have been completed include:
 
@@ -155,6 +155,9 @@ The following steps must be completed prior to the execution of the Hitachi ICO 
 3. [Cisco  ICO onboarding of Hitachi VSP One Block](https://www.hitachivantara.com/en-us/pdf/architecture-guide/integrating-virtual-storage-platform-with-cisco-intersight.pdf)
 
 To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_workflows.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) 
+
+For detailed information on executing the workflows refer to the Cisco and Hitachi Adaptive Solutions VVF 9.0 Deployment Guide for VMWare vSphere Foundation 9.0, Hitachi VSP One Block and   
+Cisco UCS X210c M8 Servers.  ADD THE URL HERE. 
 
 Four workflows are available to configure the storage requirements and should be executed in the order listed below:
 
@@ -255,7 +258,7 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 5. Multiple pool volumes may be added using the "+" option.  
 6. Validate pool capacity and health after creation.
 
-#### The following steps must be executed once the custom ICO workflow has been imported: (Stopped Here)
+#### The following steps must be executed once the custom ICO workflow has been imported:   
 
 1. Select VSI - New Hitachi Pool 
 2. Click Execute.
@@ -276,17 +279,17 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 3. Applied warning and depletion thresholds.  
 4. Applied optional snapshot suspension settings.
 
-### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool 
+### Hitachi ICO Workflows Execution Sequence for VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server
 
 #### Purpose   
 
-Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously created and formatted BASIC LDEVs.
+Automate creation of a boot volume, host group, WWPN registration, and LUN presentation for a Cisco UCS server.   
 
 #### Prerequisites
 
-1. Workflow 1 completed successfully.
-2. BASIC LDEVs have been created and formatted.
-3. Required LDEV IDs have been documented from Workflow 1.
+1. Workflow 2 completed successfully.
+2. HDP Pool exists on the selected storage array.   
+3. UCS server WWPNs are available and noted for both SAN fabrics.   
 4. Target storage array is onboarded and manageable through Cisco Intersight.
 
 #### Required Workflow Inputs  
