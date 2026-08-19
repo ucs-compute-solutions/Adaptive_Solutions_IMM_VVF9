@@ -276,3 +276,64 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 3. Applied warning and depletion thresholds.  
 4. Applied optional snapshot suspension settings.
 
+### Hitachi ICO Workflows Execution Sequence for VSI - New Hitachi Pool 
+
+#### Purpose   
+
+Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously created and formatted BASIC LDEVs.
+
+#### Prerequisites
+
+1. Workflow 1 completed successfully.
+2. BASIC LDEVs have been created and formatted.
+3. Required LDEV IDs have been documented from Workflow 1.
+4. Target storage array is onboarded and manageable through Cisco Intersight.
+
+#### Required Workflow Inputs  
+
+| Parameter |	                      Description |    
+| --- | --- |  
+| Storage Array |	                  Target Hitachi VSP storage system where the pool will be created |   
+| Pool ID |                        	Available HDP Pool ID | 
+| Pool Name | 	                    User-defined pool name |  
+| Pool Volumes | 	                  LDEV IDs created in Workflow 1 |    
+| Warning Threshold | 	            Pool utilization warning threshold, predefined as 70% |   
+| Depletion Threshold |             Pool utilization depletion threshold predefined as 80% |   
+| Suspend Snapshot (Optional) |   	Snapshot behavior when depletion threshold is reached, default set to false |  
+
+#### Workflow Outputs
+
+1. Creates a new HDP Pool.  
+2. Assigns specified BASIC pool LDEVs to the pool.  
+3. Applies warning and depletion thresholds.    
+4. Applies optional snapshot suspension settings.  
+
+#### Workflow Considerations
+  
+1. Pool Type is hardcoded as HDP.   
+2. Recommended Warning Threshold is 70%.  
+3. Recommended Depletion Threshold is 80%.  
+4. Pool ID availability must be verified before execution.  
+5. Multiple pool volumes may be added using the "+" option.  
+6. Validate pool capacity and health after creation.
+
+#### The following steps must be executed once the custom ICO workflow has been imported: (Stopped Here)
+
+1. Select VSI - New Hitachi Pool 
+2. Click Execute.
+3. Define the following inputs:
+   a. Select Storage Array
+   b. Enter Pool ID 
+   c. Enter Pool Name
+   d. Enter Pool Volumes
+   e. Enter Warning Threshold (Optional)
+   f. Enter Depletion Threshold (Optional)
+   g. Enter Suspend Snapshot (Optional)
+
+#### Hitachi Post-workflow status
+
+Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
+1. Created a new HDP Pool.
+2. Assigned specified BASIC pool LDEVs to the pool.
+3. Applied warning and depletion thresholds.  
+4. Applied optional snapshot suspension settings.
