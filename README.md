@@ -179,10 +179,10 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 
 #### Required Workflow Inputs  
 
-Parameter	                    Description  
-Storage Array 	              Target Hitachi VSP storage system where volumes will be created  
-Parity Group	                Existing parity group used for volume creation  
-Capacity Override (Optional)	Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded.  
+| Parameter |	                    | Description  |
+| Storage Array | 	              | Target Hitachi VSP storage system where volumes will be created | 
+| Parity Group |	                | Existing parity group used for volume creation  |
+| Capacity Override (Optional) |	| Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded. |
 
 #### Workflow Outputs
 
