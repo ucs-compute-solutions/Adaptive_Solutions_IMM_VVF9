@@ -161,10 +161,10 @@ Cisco UCS X210c M8 Servers.  ADD THE URL HERE.
 
 Four workflows are available to configure the storage requirements and should be executed in the order listed below:
 
-1. VSI – New Hitachi Volume for Pool Volume with Format
-2. VSI – New Hitachi Pool
-3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server  
-4. VSI – New Hitachi LUN ID Cluster
+1. VSI – New Hitachi Volume for Pool Volume with Format.   
+2. VSI – New Hitachi Pool.   
+3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server.    
+4. VSI – New Hitachi LUN ID Cluster.  
 
 ### Hitachi ICO Workflow 1 Execution Sequence for VSI - New Hitachi Volume for Pool Volume with Format **  
 
@@ -176,9 +176,9 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
 2. Storage parity groups must already exist on the selected storage array.  
 3. Parity groups must be created using:  
-   a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM)  
-   b. Embedded Administrator / Element Manager  
-4. Workflow is configured to mirror the reference VSI deployment architecture.
+   a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM).  
+   b. Embedded Administrator / Element Manager.  
+4. Workflow is configured to mirror the reference VSI deployment architecture.  
 
 #### Required Workflow Inputs  
 
@@ -264,23 +264,23 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 
 The following steps must be executed once the custom ICO workflow has been imported:
 
-1. Select VSI - New Hitachi Pool 
-2. Click Execute.
-3. Define the following inputs:
-   a. Select Storage Array
-   b. Enter Pool ID 
-   c. Enter Pool Name
-   d. Enter Pool Volumes 
-   e. Enter Warning Threshold
-   f. Enter Depletion Threshold
-   g. Enter Suspend Snapshot (Optional)
+1. Select VSI - New Hitachi Pool. 
+2. Click Execute. 
+3. Define the following inputs:  
+   a. Select Storage Array  
+   b. Enter Pool ID   
+   c. Enter Pool Name  
+   d. Enter Pool Volumes   
+   e. Enter Warning Threshold  
+   f. Enter Depletion Threshold  
+   g. Enter Suspend Snapshot (Optional)  
 
 #### Hitachi Post-workflow status
 
 Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
 1. Boot volume per UCS server. 
 2. Host groups per server. 
-3. Applied warn
+3. Applied warning message.
 4. Applied optional snapshot suspension settings.
 
 ### Hitachi ICO Workflow 3 Execution Sequence for VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server **  
@@ -337,17 +337,17 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 
 The following steps must be executed once the custom ICO workflow has been imported: 
 
-1. Select VSI - Hitachi VSP Host Group and Boot Path Creation to UCS Server
+1. Select VSI - Hitachi VSP Host Group and Boot Path Creation to UCS Server. 
 2. Click Execute.
-3. Define the following inputs:
-   a. Select Storage Array
-   b. Enter Pool ID 
-   c. Enter Port ID  
-   d. Enter Host Mode Options (predefined)  
-   e. Enter Host Group Number   
-   f. Enter UCS Fabric A WWPNs
-   g. Enter UCS Fabric B WWPNs
-   h. Enter Volume Label
+3. Define the following inputs:  
+   a. Select Storage Array  
+   b. Enter Pool ID   
+   c. Enter Port ID    
+   d. Enter Host Mode Options (predefined)    
+   e. Enter Host Group Number     
+   f. Enter UCS Fabric A WWPNs  
+   g. Enter UCS Fabric B WWPNs  
+   h. Enter Volume Label  
   
 #### Hitachi Post-workflow status
 
