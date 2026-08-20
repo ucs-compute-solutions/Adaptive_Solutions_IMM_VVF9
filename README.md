@@ -113,7 +113,7 @@ The steps that will need to have been completed include:
    completed in the individual playbooks.  ADD A LINK HERE FOR THE PUBLISHED URL OF THE DEPL GD.
 5. Playbooks are interdependent. For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.  Variable values are not passed between the imported playbooks.
 6. Playbook "bhe_day0_expressd_interactive07142026.yml" is the master playbook invoking other imported playbooks.  
-7. Playbook "bhe_day0_expressd_interactive07142026.yml" will be used to enter the Hitachi VSP One BHE userid and password for the imported playbooks.  
+7. Playbook "bhe_day0_expressd_interactive07142026.yml" will prompt the user to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks.  
 8. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
    .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars  
 
@@ -126,7 +126,8 @@ The steps that will need to have been completed include:
 
 ### Hitachi Playbook Execution Sequence
 
-NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation. This is only required if executing the imported playbooks individually
+NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation. This is only required if executing the imported playbooks individually  
+
 1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive07142026.yml
    with your customization values.  
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive07142026.yml.  
