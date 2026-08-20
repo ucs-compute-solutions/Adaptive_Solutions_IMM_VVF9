@@ -305,7 +305,7 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 | Port ID |                        	Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
 | Host Mode Options | 	            Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |  
 | Host Group Number  | 	            Users must define Host Group Number, initial state predefines 1, must be iterated based on number of servers deployed  |    
-| Host Group Name  | 	              %User defined Host Group Name, nomenclature predefined per fabric  |   
+| Host Group Name  | 	              User defined Host Group Name, nomenclature predefined per fabric  |   
 | UCS Fabric A WWPNs |              Server WWPNs for Fabric A  |   
 | UCS Fabric B WWPNs |   	          Server WWPNs for Fabric B  |    
 | Volume Label |                 	  Boot volume naming convention |  
