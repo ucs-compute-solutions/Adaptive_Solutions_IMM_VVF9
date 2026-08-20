@@ -177,7 +177,7 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 2. Storage parity groups must already exist on the selected storage array.  
 3. Parity groups must be created using:  
    a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM).  
-   b. Embedded Administrator / Element Manager.  
+   b. Administrator / Element Manager.  
 4. Workflow is configured to mirror the reference VSI deployment architecture.  
 
 #### Required Workflow Inputs  
