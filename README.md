@@ -396,7 +396,7 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
 3. Confirm datastore discovery within vCenter.   
 4. Verify consistent presentation across Fabric A and Fabric B.   
 5. Ensure adequate pool capacity exists before execution. 
-6. For usage of workflow after LUN ID one has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow.   
+6. For usage of workflow after LUN ID "1" has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow.   
    
 #### Workflow Execution  
 
