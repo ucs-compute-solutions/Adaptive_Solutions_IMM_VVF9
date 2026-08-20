@@ -329,9 +329,9 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 5. DRS Volume is enabled by default. 
 6. Validate host group creation and LDEV presentation following workflow completion.
 7. This workflow provisions a single UCS server.
-8. To replicate the reference VSI deployment:
-   a. Execute the workflow four times.
-   b. One execution of this workflow is required per UCS Server.
+8. To replicate the reference VSI deployment:  
+   a. Execute the workflow four times.  
+   b. One execution of this workflow is required per UCS Server.  
    
 #### Workflow Execution  
 
