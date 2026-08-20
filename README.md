@@ -79,17 +79,16 @@ Execution of the playbooks in these repositories set up a Server Profile Templat
 ## Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
 
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible sample playbooks for
-configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) storage requirements.  
+configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) CVD.  
 
 The steps that will need to have been completed include:
 
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)   
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
-3. Completed installation of the cisco.intersight ansible-galaxy collection. Refer to the Cisco and Adaptive Solutions for Converged  
-   Infrastructure IMM configuration with Ansible section in this READMe.md file.  
+3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with Ansible" section in this READMe.md file.  
 4. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
-   - bhe_day0_expressd_interactive.yml  
+   - bhe_day0_expressd_interactive07142026.yml  
    - bhe_day0_vsp_one_expressd_prompt_check.yml  
    - bhe_day0_vsp_one_create_boot_ldevs.yml  
    - bhe_day0_vsp_one_create_parity_pool.yml  
@@ -105,18 +104,17 @@ The steps that will need to have been completed include:
 2. Post installation of the Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7, all Hitachi playbooks
    are available at the following location: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks
 
-### Hitachi Storage Module Usage
-
-1. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
+### Hitachi Storage Module Playbook Usage  
+  
+1. All playbooks have been modified to match the variable values used in the CVD Deployment Guide.
+2. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
    used to validate an IP address.  
-2. All playbooks have been modified to match the variable values used in the CVD Deployment Guide.  
-3. Modifying the playbooks to deviate from the default CVD Deployment Guide variable values must be
-   completed in the individual playbooks.  
-4. Playbooks are interdependent. For example, LDEV ID values must be used consistently for the CVD Deployment.  
-5. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks.  
-6. Playbook "bhe_day0_expressd_interactive.yml" will be used to enter the Hitachi VSP One BHE userid and password
-   for the imported playbooks.  
-7. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
+4. Modifying the playbooks to deviate from the default CVD Deployment Guide variable values must be
+   completed in the individual playbooks.  ADD A LINK HERE FOR THE PUBLISHED URL OF THE DEPL GD.
+5. Playbooks are interdependent. For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.  Variable values are not passed between the imported playbooks.
+6. Playbook "bhe_day0_expressd_interactive07142026.yml" is the master playbook invoking other imported playbooks.  
+7. Playbook "bhe_day0_expressd_interactive07142026.yml" will be used to enter the Hitachi VSP One BHE userid and password for the imported playbooks.  
+8. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
    .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars  
 
 ### Hitachi Playbook Execution Prerequisites
@@ -128,10 +126,10 @@ The steps that will need to have been completed include:
 
 ### Hitachi Playbook Execution Sequence
 
-NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation.
-1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
+NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation. This is only required if executing the imported playbooks individually
+1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive07142026.yml
    with your customization values.  
-2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
+2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive07142026.yml.  
    Default variable values can be used. Prompts are available to override some variables.
 
 ### Hitachi Post Configuration Playbook Status
