@@ -166,7 +166,7 @@ Four workflows are available to configure the storage requirements and should be
 3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server.    
 4. VSI – New Hitachi LUN ID Cluster.  
 
-### Hitachi ICO Workflow 1 Execution Sequence for VSI - New Hitachi Volume for Pool Volume with Format **  
+### Hitachi ICO Workflow 1 Execution Sequence for VSI - New Hitachi Volume for Pool Volume with Format    
 
 #### Purpose  
 Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
@@ -219,7 +219,7 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 2.	2640 GB Capacity per LDEV has been created.  
 3.	Quick Format (QFMT) has been performed on all volumes.
 
-### Hitachi ICO Workflow 2 Execution Sequence for VSI - New Hitachi Pool **  
+### Hitachi ICO Workflow 2 Execution Sequence for VSI - New Hitachi Pool    
 
 #### Purpose   
 
@@ -283,7 +283,7 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 3. Applied warning message.
 4. Applied optional snapshot suspension settings.
 
-### Hitachi ICO Workflow 3 Execution Sequence for VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server **  
+### Hitachi ICO Workflow 3 Execution Sequence for VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server    
 
 #### Purpose   
 
@@ -357,7 +357,7 @@ Execution of the workflow will result in the creation on the VSP One BHE of the 
 3. WWPN registration per server. 
 4. LUN presentation for a UCS server.
 
-### Hitachi ICO Workflow 4 Execution Sequence for VSI – New Hitachi LUN ID Cluster **  
+### Hitachi ICO Workflow 4 Execution Sequence for VSI – New Hitachi LUN ID Cluster   
 
 #### Purpose   
 
