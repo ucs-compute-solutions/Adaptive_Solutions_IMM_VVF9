@@ -210,14 +210,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 3. Define the following inputs:  
    a. Select Storage Array.  
    b. Select Parity Group.  
-   c. Capacity Override (Optional).   
-
-#### Post-workflow status
-
-Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1.	Eight BASIC Pool Volumes with no Data Reduction Mode have been created.
-2.	2640 GB Capacity per LDEV has been created.  
-3.	Quick Format (QFMT) has been performed on all volumes.
+   c. Capacity Override (Optional).     
 
 ### Hitachi ICO Workflow 2 Execution Sequence for "VSI - New Hitachi Pool"    
 
@@ -273,15 +266,7 @@ The following steps must be executed once the custom ICO workflow has been impor
    d. Enter Pool Volumes   
    e. Enter Warning Threshold  
    f. Enter Depletion Threshold  
-   g. Enter Suspend Snapshot (Optional)  
-
-#### Post-workflow status
-
-Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1. Boot volume per UCS server. 
-2. Host groups per server. 
-3. Applied warning message.
-4. Applied optional snapshot suspension settings.
+   g. Enter Suspend Snapshot (Optional)    
 
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server"    
 
@@ -347,15 +332,7 @@ The following steps must be executed once the custom ICO workflow has been impor
    e. Enter Host Group Number     
    f. Enter UCS Fabric A WWPNs  
    g. Enter UCS Fabric B WWPNs  
-   h. Enter Volume Label  
-  
-#### Post-workflow status
-
-Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1. Boot volume per UCS server. 
-2. Host groups per server. 
-3. WWPN registration per server. 
-4. LUN presentation for a UCS server.
+   h. Enter Volume Label    
 
 ### Hitachi ICO Workflow 4 Execution Sequence for "VSI – New Hitachi LUN ID Cluster"   
 
@@ -410,12 +387,6 @@ The following steps must be executed once the custom ICO workflow has been impor
    c. Enter Datastore Volume Size      
    d. Enter Volume Label    
    e. Enter Target Host Groups  
-   f. Enter Data Reduction Mode
+   f. Enter Data Reduction Mode  
   
-#### Post-workflow status
 
-Execution of the workflow will result in the creation on the VSP One BHE of the following elements:
-1. VMFS datastore LDEV(s).  
-2. LDEV allocation to all specified Host Groups.
-3. LUN ID 1 consistently presented to all specified Host Groups. 
-4. LUN ID 1 discoverable on vCenter.
