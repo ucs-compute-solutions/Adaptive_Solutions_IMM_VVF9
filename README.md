@@ -238,7 +238,6 @@ The following steps must be executed once the custom ICO workflow has been impor
    g. Enter Suspend Snapshot    
 
 #### Required Workflow Inputs  
-
 | Parameter |	                      Description |    
 | --- | --- |  
 | Storage Array |	                  Target Hitachi VSP storage system where the pool will be created. |   
@@ -250,14 +249,12 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Suspend Snapshot (Optional) |   	Snapshot behavior when depletion threshold is reached, default set to false. |  
 
 #### Workflow Outputs
-
 1. Creates a new HDP Pool.  
 2. Assigns specified BASIC pool LDEVs to the pool.  
 3. Applies warning and depletion thresholds.    
 4. Applies optional snapshot suspension settings.
 
 #### Workflow Considerations
-
 1. Pool Type is hardcoded as HDP.   
 2. Recommended Warning Threshold is 70%.  
 3. Recommended Depletion Threshold is 80%.  
