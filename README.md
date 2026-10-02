@@ -283,7 +283,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Host Group Number  | 	                 Host Group Number 1 has been predefined,  users must iterate subsequent host group numbers based on the server being deployed  |    
 | UCS Fabric A & B WWNs |               Server WWPNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment. | 
 | Host Mode | 	                         Host Mode	Host Mode VMware Extension predefined.| 
-| Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |   
+| Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined.  |   
 
 #### Workflow Outputs
 1. Creates Boot LDEV.   
