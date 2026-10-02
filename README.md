@@ -294,8 +294,8 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 | Storage Array |	                       Target VSP One Block storage system which will provide Boot LDEV to UCS Servers |   
 | Pool ID |                              Existing HDP Pool used for boot volume creation, pool ID 1 is predefined. | 
 | Volume Label |                 	       Boot volume naming convention, Boot_Device_ESXi-00x has been predefined, and users must define x based on server being deployed. |
-! Data Reduction Mode !                  Data Reduction Mode has been set to compression_deduplication and should not be modified. |
-! Data Reduction Shared Volume Enabled ! Data Reduction Shared Volume has been set to enabled and should not be modified. |
+| Data Reduction Mode !                  Data Reduction Mode has been set to compression_deduplication and should not be modified. |
+| Data Reduction Shared Volume Enabled ! Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Host Group Name  | 	                   User defined Host Group Name, nomenclature predefined per fabric  |  
 | Port ID |                            	 Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
 | Host Group Number  | 	                 User defined Host Group Name, nomenclature predefined per fabric, user must define server number by updating x value per server deployment.  |    
