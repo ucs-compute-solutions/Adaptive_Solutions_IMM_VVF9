@@ -216,11 +216,9 @@ The following steps must be executed once the custom ICO workflow has been impor
 ### Hitachi ICO Workflow 2 Execution Sequence for "VSI - New Hitachi Pool"    
 
 #### Purpose   
-
 Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously created and formatted BASIC LDEVs.
 
 #### Prerequisites
-
 1. Workflow 1 completed successfully.
 2. BASIC LDEVs have been created and formatted.
 3. Required LDEV IDs have been documented from Workflow 1.
@@ -228,7 +226,6 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 
 #### Workflow Execution 
 The following steps must be executed once the custom ICO workflow has been imported:
-
 1. Select VSI - New Hitachi Pool. 
 2. Click Execute. 
 3. Define the following inputs:  
