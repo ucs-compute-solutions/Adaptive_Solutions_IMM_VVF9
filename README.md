@@ -294,8 +294,8 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 | Storage Array |	                       Target VSP One Block storage system which will provide Boot LDEV to UCS Servers |   
 | Pool ID |                              Existing HDP Pool used for boot volume creation, pool ID 1 is predefined. | 
 | Volume Label |                 	       Boot volume naming convention, Boot_Device_ESXi-00x has been predefined, and users must define x based on server being deployed. |
-| Data Reduction Mode !                  Data Reduction Mode has been set to compression_deduplication and should not be modified. |
-| Data Reduction Shared Volume Enabled ! Data Reduction Shared Volume has been set to enabled and should not be modified. |
+| Data Reduction Mode |                  Data Reduction Mode has been set to compression_deduplication and should not be modified. |
+| Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Host Group Name  | 	                   User defined Host Group Name, nomenclature predefined per fabric  |  
 | Port ID |                            	 Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
 | Host Group Number  | 	                 User defined Host Group Name, nomenclature predefined per fabric, user must define server number by updating x value per server deployment.  |    
@@ -364,7 +364,7 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
 | Pool ID      |                         Existing HDP Pool used for datastore allocation, Pool ID 1 is predefined. | 
 | Volume Label |                 	       Datastore naming convention, Application_VMFS_Volume is predefined |   
 | Data Reduction Mode  | 	               Compression & deduplication and DRS predefined and should not be modified   |
-! Data Reduction Shared Volume Enabled ! Data Reduction Shared Volume has been set to enabled and should not be modified. |
+| Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Size |                                 Capacity of the VMFS datastore 10TiB is predefined |
 | Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
     
