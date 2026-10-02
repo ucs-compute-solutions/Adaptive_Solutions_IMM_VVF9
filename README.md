@@ -274,7 +274,7 @@ The following steps must be executed once the custom ICO workflow has been impor
    f. Enter Depletion Threshold  
    g. Enter Suspend Snapshot     
 
-### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server"    
+### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP One Block Host Group and Boot Path Creation to UCS Server"    
 
 #### Purpose   
 
@@ -289,17 +289,19 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 
 #### Required Workflow Inputs  
 
-| Parameter |	                      Description |    
+| Parameter |	                           Description |    
 | --- | --- |  
-| Storage Array |	                  Target Hitachi VSP storage system where the pool will be created |   
-| Pool ID |                        	Available HDP Pool ID | 
-| Port ID |                        	Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
-| Host Mode Options | 	            Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |  
-| Host Group Number  | 	            Users must define Host Group Number, initial state predefines 1, must be iterated based on number of servers deployed  |    
-| Host Group Name  | 	              User defined Host Group Name, nomenclature predefined per fabric  |   
-| UCS Fabric A WWPNs |              Server WWPNs for Fabric A  |   
-| UCS Fabric B WWPNs |   	          Server WWPNs for Fabric B  |    
-| Volume Label |                 	  Boot volume naming convention |  
+| Storage Array |	                       Target VSP One Block storage system which will provide Boot LDEV to UCS Servers |   
+| Pool ID |                              Existing HDP Pool used for boot volume creation, pool ID 1 is predefined. | 
+| Volume Label |                 	       Boot volume naming convention, Boot_Device_ESXi-00x has been predefined, and users must define x based on server being deployed. |
+! Data Reduction Mode !                  Data Reduction Mode has been set to compression_deduplication and should not be modified. |
+! Data Reduction Shared Volume Enabled ! Data Reduction Shared Volume has been set to enabled and should not be modified. |
+| Host Group Name  | 	                   User defined Host Group Name, nomenclature predefined per fabric  |  
+| Port ID |                            	 Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
+| Host Group Number  | 	                 User defined Host Group Name, nomenclature predefined per fabric, user must define server number by updating x value per server deployment.  |    
+| UCS Fabric A & B WWPNs |               Server WWPNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment.|     | 
+| Host Mode | 	                         Host Mode	Host Mode VMware Extension predefined.| 
+| Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |   
 
 #### Workflow Outputs
 
@@ -332,15 +334,15 @@ The following steps must be executed once the custom ICO workflow has been impor
 2. Click Execute.
 3. Define the following inputs:  
    a. Select Storage Array  
-   b. Enter Pool ID   
-   c. Enter Port ID    
-   d. Enter Host Mode Options (predefined)    
-   e. Enter Host Group Number     
-   f. Enter UCS Fabric A WWPNs  
-   g. Enter UCS Fabric B WWPNs  
-   h. Enter Volume Label    
+   b. Enter Pool ID
+   c. Enter Volume Label
+   d. Enter Host Group Name suffix
+   e. Enter Port ID    
+   f. Enter Host Group Number     
+   g. Enter UCS Fabric A & B WWPNs
+ 
 
-### Hitachi ICO Workflow 4 Execution Sequence for "VSI – New Hitachi LUN ID Cluster"   
+### Hitachi ICO Workflow 4 Execution Sequence for "VSI – New Hitachi LUN ID 1 Cluster"   
 
 #### Purpose   
 
@@ -356,14 +358,16 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
   
 #### Required Workflow Inputs  
 
-| Parameter |	                      Description |    
+| Parameter |	                           Description |    
 | --- | --- |  
-| Storage Array |	                  Target Hitachi VSP storage system where the pool will be created |   
-| Storage Pool |                    Existing HDP Pool used for datastore allocation, Pool ID 1 is predefined. | 
-| Datastore Volume Size |           Capacity of the VMFS datastore 10Tb is predefined   |   
-| Volume Label |                 	  Datastore naming convention, Application_VMFS_Volume is predefined |    
-| Target Host Groups | 	            Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
-| Data Reduction Mode  | 	          Compression & deduplication and DRS predefined   |      
+| Storage Array |	                       Target VSP One Block storage system that will provide shared LDEV to UCS Servers |   
+| Pool ID      |                         Existing HDP Pool used for datastore allocation, Pool ID 1 is predefined. | 
+| Volume Label |                 	       Datastore naming convention, Application_VMFS_Volume is predefined |   
+| Data Reduction Mode  | 	               Compression & deduplication and DRS predefined and should not be modified   |
+! Data Reduction Shared Volume Enabled ! Data Reduction Shared Volume has been set to enabled and should not be modified. |
+| Size |                                 Capacity of the VMFS datastore 10TiB is predefined |
+| Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
+    
 
 #### Workflow Outputs
 
@@ -388,11 +392,10 @@ The following steps must be executed once the custom ICO workflow has been impor
 1. Select VSI - New Hitachi LUN ID Cluster. 
 2. Click Execute.
 3. Define the following inputs:  
-   a. Select Storage Array  
-   b. Enter Storage Pool     
-   c. Enter Datastore Volume Size      
-   d. Enter Volume Label    
-   e. Enter Target Host Groups  
-   f. Enter Data Reduction Mode  
+   a. Select Storage Array          
+   b. Enter Target Host Groups
+
+### Hitachi ICO Workflow 5 Execution Sequence for "VSI – New Hitachi LUN ID 2 Cluster"   ********Complete this section*********************
+
   
 
