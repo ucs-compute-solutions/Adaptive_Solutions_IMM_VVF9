@@ -256,18 +256,21 @@ The following steps must be executed once the custom ICO workflow has been impor
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP One Block Host Group and Boot Path Creation to UCS Server"    
 
 #### Purpose   
-
 Automate creation of a boot volume, host group, WWPN registration, and LUN presentation for a Cisco UCS server.   
 
 #### Prerequisites
-
 1. Workflow 2 completed successfully.
 2. HDP Pool exists on the selected storage array.   
 3. UCS server WWPNs are available and noted for both SAN fabrics.   
 4. Target storage array is onboarded and manageable through Cisco Intersight.
 
-#### Required Workflow Inputs  
+#### Workflow Execution  
+The following steps must be executed once the custom ICO workflow has been imported: 
+1. Select VSI - Hitachi VSP Host Group and Boot Path Creation to UCS Server. 
+2. Click Execute.
+3. Define the following inputs in the below Required Workflow Inputs Table:  
 
+#### Required Workflow Inputs  
 | Parameter |	                           Description |    
 | --- | --- |  
 | Storage Array |	                       Target VSP One Block storage system which will provide Boot LDEV to UCS Servers |   
@@ -283,7 +286,6 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 | Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |   
 
 #### Workflow Outputs
-
 1. Creates Boot LDEV.   
 2. Creates 4 Host Groups per UCS Server.   
 3. Registers Fabric A WWPNs based on VSP port connections.   
@@ -293,7 +295,6 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 7. Allocates Boot LDEV to the server.   
 
 #### Workflow Considerations
-
 1. Host Mode and Host Mode Options are hardcoded.   
 2. Boot volume size is hardcoded at 200 GB.   
 3. Host Group number 1 is hardcoded, for N+1 iterations admins must define available Host Group ID based on allocated ports.   
@@ -304,23 +305,7 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 8. To replicate the reference VSI deployment:  
    a. Execute the workflow four times.  
    b. One execution of this workflow is required per UCS Server.  
-   
-#### Workflow Execution  
-
-The following steps must be executed once the custom ICO workflow has been imported: 
-
-1. Select VSI - Hitachi VSP Host Group and Boot Path Creation to UCS Server. 
-2. Click Execute.
-3. Define the following inputs:  
-   a. Select Storage Array  
-   b. Enter Pool ID
-   c. Enter Volume Label
-   d. Enter Host Group Name suffix
-   e. Enter Port ID    
-   f. Enter Host Group Number     
-   g. Enter UCS Fabric A & B WWPNs
  
-
 ### Hitachi ICO Workflow 4 Execution Sequence for "VSI – New Hitachi LUN ID 1 Cluster"   
 
 #### Purpose   
