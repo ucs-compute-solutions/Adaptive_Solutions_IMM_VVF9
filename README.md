@@ -317,19 +317,20 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
 
 #### Workflow Execution  
 The following steps must be executed once the custom ICO workflow has been imported: 
-1. Select VSI - New Hitachi LUN ID Cluster. 
+1. Select VSI - New Hitachi LUN ID 1 Cluster. 
 2. Click Execute.
-3. Define the following inputs below in the Required Workflow Inputs Table:  
+3. Define the following inputs below in the Required Workflow Inputs table:  
   
 #### Required Workflow Inputs  
 | Parameter |	                           Description |    
 | --- | --- |  
 | Storage Array |	                       Target VSP One Block storage system that will provide shared LDEV to UCS Servers |   
-| Pool ID      |                         Existing HDP Pool used for datastore allocation, Pool ID 1 is predefined. | 
+| Pool ID      |                         Existing HDP Pool, Pool ID 1 is predefined | 
 | Volume Label |                 	       Datastore naming convention, Application_VMFS_Volume is predefined |   
-| Data Reduction Mode  | 	               Compression & deduplication and DRS predefined and should not be modified   |
+| Data Reduction Mode  | 	               Compression & deduplication predefined and should not be modified   |
 | Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
-| Size |                                 Capacity of the VMFS datastore 10TiB is predefined |
+| Size |                                 Capacity of the VMFS datastore 10 is predefined |
+| Unit |                                 Unit TiB has been predefined |
 | Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
 
 #### Workflow Outputs
