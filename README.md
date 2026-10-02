@@ -164,8 +164,9 @@ Four workflows are available to configure the storage requirements and should be
 1. VSI – New Hitachi Volume for Pool Volume with Format.   
 2. VSI – New Hitachi Pool.   
 3. VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server.    
-4. VSI – New Hitachi LUN ID Cluster.  
-
+4. VSI – New Hitachi LUN ID 1 Cluster.
+5. VSI – New Hitachi LUN ID 2 Cluster.
+  
 ### Hitachi ICO Workflow 1 Execution Sequence for "VSI - New Hitachi Volume for Pool Volume with Format"    
 
 #### Purpose  
@@ -184,9 +185,15 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 
 | Parameter |	                      Description |    
 | --- | --- |  
-| Storage Array | 	                Target Hitachi VSP storage system where volumes will be created |    
-| Parity Group |	                  Existing parity group used for volume creation |    
-| Capacity Override (Optional) |	  Modify if deployment requirements differ from VSI reference architecture, 2640Gb is hardcoded. |  
+| Storage Array | 	                     Target Hitachi VSP storage system where volumes will be created and formatted |    
+| Parity Group |	                       Existing parity group used for BASIC volume creation, ex 1-1, 1-2, 1-3 etc..  |   
+| Volume Label |	                       Modify if deployment requirements are different from VSI reference architecture, Basic_Pool_Volume is hardcoded. | 
+| Data Reduction Mode |	                 Data Reduction Mode has been set to disabled and should not be modified. |
+| Data Reduction Shared Volume Enabled | Data Reduction Shared Volume Enabled is disabled and should not be modified. |
+| Size |	                               Modify if deployment requirements are different from VSI reference architecture, 2640 is hardcoded. |
+| Unit |	                               Modify if deployment requirements are different from VSI reference architecture, Gigabyte (GiB) is hardcoded. |
+| Format Type  |	                       Format Type 	Quick Format (QFMT) is predefined and should not be modified. |
+| Force Format  |	                       Force Format is disabled and should not be modified. |  
 
 #### Workflow Outputs
 
