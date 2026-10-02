@@ -154,13 +154,13 @@ The following steps must be completed prior to the execution of the Hitachi ICO 
 3. Create of parity groups must have been completed on the array.
 4. [Cisco  ICO onboarding of Hitachi VSP One Block](https://www.hitachivantara.com/en-us/pdf/architecture-guide/integrating-virtual-storage-platform-with-cisco-intersight.pdf)
 
-To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_workflows.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) 
+To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_workflows.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) under section "Import Custom Workflows".
 
 In the Github repository also download to your desktop the following file Hitachi_VSI_Provisioning_Worksheet_Formatted_v2.docx to assist you in documenting the values to be used for the ICO workflows.  
 
-For detailed information on executing the workflows refer to the "Cisco and Hitachi Adaptive Solutions VVF 9.0 Deployment Guide for VMWare vSphere Foundation 9.0, Hitachi VSP One Block and Cisco UCS X210c M8 Servers".  ADD THE URL HERE.   
+For detailed information on executing the workflows refer to the "Cisco and Hitachi Adaptive Solutions VVF 9.0 Deployment Guide for VMWare vSphere Foundation 9.0, Hitachi VSP One Block High End and Cisco UCS X210c M8 Servers".  ADD THE URL HERE.   
 
-Four workflows are available to configure the storage requirements and should be executed in the order listed below:
+Five workflows are available to configure the storage requirements and should be executed in the order listed below to mimic the Adaptive Solutions Deployment Guide:
 
 1. VSI – New Hitachi Volume for Pool Volume with Format.   
 2. VSI – New Hitachi Pool.   
@@ -176,11 +176,8 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 #### Prerequisites
 
 1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
-2. Storage parity groups must already exist on the selected storage array.  
-3. Parity groups must be created using:  
-   a. Hitachi Command Control Interface (CCI)/RAID Manager (RAIDCOM).  
-   b. Administrator / Element Manager.  
-4. Workflow is configured to mirror the reference VSI deployment architecture.  
+2. Storage parity groups must already exist on the selected storage array. Refer to Deployment Guide section Create Parity Groups and Dynamic Provisioning Pool on VSP One BHE with Administrator Command and Control Interface (CCI).
+3. Workflow is configured to mirror the reference VSI deployment architecture.  
 
 #### Required Workflow Inputs  
 
