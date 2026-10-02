@@ -348,7 +348,48 @@ The following steps must be executed once the custom ICO workflow has been impor
 6. For usage of workflow after LUN ID "1" has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow.   
    
 
-### Hitachi ICO Workflow 5 Execution Sequence for "VSI – New Hitachi LUN ID 2 Cluster"   ********Complete this section*********************
+### Hitachi ICO Workflow 5 Execution Sequence for "VSI – New Hitachi LUN ID 2 Cluster"   
+
+#### Purpose   
+Automate creation and allocation of shared VMFS datastore volumes to all servers within a VMware cluster as LUN ID 1.   
+
+#### Prerequisites
+1. Workflow 3 completed successfully.
+2. Host Groups and server WWNs exist on the selected storage array.   
+3. SAN connectivity is operational.    
+4. Target storage array is onboarded and manageable through Cisco Intersight.
+
+#### Workflow Execution  
+The following steps must be executed once the custom ICO workflow has been imported: 
+1. Select VSI - New Hitachi LUN ID 2 Cluster. 
+2. Click Execute.
+3. Define the following inputs below in the Required Workflow Inputs table:  
+  
+#### Required Workflow Inputs  
+| Parameter |	                           Description |    
+| --- | --- |  
+| Storage Array |	                       Target VSP One Block storage system that will provide shared LDEV to UCS Servers |   
+| Pool ID      |                         Existing HDP Pool, Pool ID 1 is predefined | 
+| Volume Label |                 	       Datastore naming convention, Application_VMFS_Volume is predefined |   
+| Data Reduction Mode  | 	               Compression & deduplication predefined and should not be modified   |
+| Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
+| Size |                                 Capacity of the VMFS datastore 10 is predefined |
+| Unit |                                 Unit TiB has been predefined |
+| Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
+
+#### Workflow Outputs
+1. Creates VMFS datastore LDEV(s).   
+2. Allocates datastore volume(s) to all specified Host Groups.   
+3. Assigns LUN IDs.  
+4. Presents datastore volumes across all configured server paths using LUN ID 1 predefined.    
+
+#### Workflow Considerations
+1. Verify datastore visibility from all ESXi hosts.   
+2. Validate VMware multipathing functionality.   
+3. Confirm datastore discovery within vCenter.   
+4. Verify consistent presentation across Fabric A and Fabric B.   
+5. Ensure adequate pool capacity exists before execution. 
+6. For usage of workflow after LUN ID "2" has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow. 
 
   
 
