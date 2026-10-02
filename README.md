@@ -175,7 +175,7 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 
 #### Prerequisites
 1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
-2. Storage parity groups must already exist on the selected storage array. Refer to Deployment Guide section Create Parity Groups and Dynamic Provisioning Pool on VSP One BHE with Administrator Command and Control Interface (CCI).
+2. Storage parity groups must already exist on the selected storage array. Refer to Deployment Guide section Create Dynamic Provisioning Pool on VSP One BHE with Administrator Command and Control Interface (CCI).
 3. Workflow is configured to mirror the reference VSI deployment architecture.
 
 #### Workflow Execution  
