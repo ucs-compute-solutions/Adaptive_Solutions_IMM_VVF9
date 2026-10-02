@@ -174,7 +174,6 @@ Five workflows are available to configure the storage requirements and should be
 Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that will subsequently be used as pool volumes for a Hitachi Dynamic Provisioning (HDP) Pool.  
 
 #### Prerequisites
-
 1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
 2. Storage parity groups must already exist on the selected storage array. Refer to Deployment Guide section Create Parity Groups and Dynamic Provisioning Pool on VSP One BHE with Administrator Command and Control Interface (CCI).
 3. Workflow is configured to mirror the reference VSI deployment architecture.
