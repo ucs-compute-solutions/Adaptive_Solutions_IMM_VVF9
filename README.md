@@ -311,10 +311,9 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
 
 #### Prerequisites
 1. Workflow 3 completed successfully.
-2. Host Groups exist on the selected storage array.   
-3. SAN connectivity is operational.
-4. All server WWNs have been registered.    
-5. Target storage array is onboarded and manageable through Cisco Intersight.
+2. Host Groups and server WWNs exist on the selected storage array.   
+3. SAN connectivity is operational.    
+4. Target storage array is onboarded and manageable through Cisco Intersight.
 
 #### Workflow Execution  
 The following steps must be executed once the custom ICO workflow has been imported: 
