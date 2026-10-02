@@ -236,13 +236,13 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 
 | Parameter |	                      Description |    
 | --- | --- |  
-| Storage Array |	                  Target Hitachi VSP storage system where the pool will be created |   
-| Pool ID |                        	Available HDP Pool ID | 
-| Pool Name | 	                    User-defined pool name |  
-| Pool Volumes | 	                  LDEV IDs created in Workflow 1 |    
-| Warning Threshold | 	            Pool utilization warning threshold, predefined as 70% |   
-| Depletion Threshold |             Pool utilization depletion threshold predefined as 80% |   
-| Suspend Snapshot (Optional) |   	Snapshot behavior when depletion threshold is reached, default set to false |  
+| Storage Array |	                  Target Hitachi VSP storage system where the pool will be created. |   
+| Pool ID |                        	Available Pool ID, for greenfield config ID 1 can be defined. | 
+| Pool Name | 	                    User-defined pool name. |  
+| Pool Volumes | 	                  LDEV IDs created in Workflow 1, select the + icon to include multiple BASIC LDEVs. |    
+| Warning Threshold | 	            Pool utilization warning threshold, predefined as 70%. |   
+| Depletion Threshold |             Pool utilization depletion threshold predefined as 80%. |   
+| Suspend Snapshot (Optional) |   	Snapshot behavior when depletion threshold is reached, default set to false. |  
 
 #### Workflow Outputs
 
