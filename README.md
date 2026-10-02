@@ -208,12 +208,10 @@ The following steps must be executed once the custom ICO workflow has been impor
 
 #### Workflow Considerations
 
-1. Record all generated LDEV IDs from the workflow execution logs.  
-2. These LDEV IDs are required for Workflow 2.  
-3. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.  
-4. Verify successful volume formatting before proceeding.  
-
-    
+1. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group. 
+2. Record all generated LDEV IDs from the workflow execution logs.  
+3. These LDEV IDs are required for Workflow 2.    
+4. Verify successful volume formatting before proceeding.   
 
 ### Hitachi ICO Workflow 2 Execution Sequence for "VSI - New Hitachi Pool"    
 
