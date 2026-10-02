@@ -381,7 +381,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 1. Creates VMFS datastore LDEV(s).   
 2. Allocates datastore volume(s) to all specified Host Groups.   
 3. Assigns LUN IDs.  
-4. Presents datastore volumes across all configured server paths using LUN ID 1 predefined.    
+4. Presents datastore volumes across all configured server paths using LUN ID 2 predefined.    
 
 #### Workflow Considerations
 1. Verify datastore visibility from all ESXi hosts.   
