@@ -267,8 +267,8 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN ID 0 
 #### Workflow Execution  
 The following steps must be executed once the custom ICO workflow has been imported: 
 1. Select VSI - Hitachi VSP Host Group and Boot Path Creation to UCS Server. 
-2. Click Execute per path.
-3. Define the following inputs in the below Required Workflow Inputs Table:  
+2. Click Execute.
+3. Define the following inputs in the below Required Workflow Inputs Table per path:  
 
 #### Required Workflow Inputs  
 | Parameter |	                           Description |    
