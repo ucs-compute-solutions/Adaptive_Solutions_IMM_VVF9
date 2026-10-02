@@ -180,7 +180,6 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 3. Workflow is configured to mirror the reference VSI deployment architecture.
 
 #### Workflow Execution  
-
 The following steps must be executed once the custom ICO workflow has been imported:
 
 1. Select VSI - New Hitachi Volume for Pool Volumes with format.
