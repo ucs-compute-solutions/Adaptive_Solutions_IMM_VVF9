@@ -307,7 +307,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 ### Hitachi ICO Workflow 4 Execution Sequence for "VSI – New Hitachi LUN ID 1 Cluster"   
 
 #### Purpose   
-Automate creation and allocation of shared VMFS datastore volumes to all servers within a VMware cluster.   
+Automate creation and allocation of shared VMFS datastore volumes to all servers within a VMware cluster as LUN ID 1.   
 
 #### Prerequisites
 1. Workflow 3 completed successfully.
