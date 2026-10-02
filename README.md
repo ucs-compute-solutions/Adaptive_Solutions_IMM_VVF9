@@ -288,11 +288,11 @@ The following steps must be executed once the custom ICO workflow has been impor
 #### Workflow Outputs
 1. Creates Boot LDEV.   
 2. Creates 4 Host Groups per UCS Server.   
-3. Registers Fabric A WWPNs based on VSP port connections.   
-4. Registers Fabric B WWPNs based on VSP port connections.     
+3. Registers Fabric A WWNs based on VSP port connections.   
+4. Registers Fabric B WWNs based on VSP port connections.     
 5. Applies predefined Host Mode (VMware Extension).   
 6. Applies predefined Host Mode Options (54, 63, 68, 110).   
-7. Allocates Boot LDEV to the server.   
+7. Allocates Boot LDEV to the server as LUN ID 0.   
 
 #### Workflow Considerations
 1. Host Mode and Host Mode Options are hardcoded.   
@@ -309,19 +309,22 @@ The following steps must be executed once the custom ICO workflow has been impor
 ### Hitachi ICO Workflow 4 Execution Sequence for "VSI – New Hitachi LUN ID 1 Cluster"   
 
 #### Purpose   
-
 Automate creation and allocation of shared VMFS datastore volumes to all servers within a VMware cluster.   
 
 #### Prerequisites
-
 1. Workflow 3 completed successfully.
 2. Host Groups exist on the selected storage array.   
 3. SAN connectivity is operational.
 4. All server WWPNs have been registered.    
 5. Target storage array is onboarded and manageable through Cisco Intersight.
+
+#### Workflow Execution  
+The following steps must be executed once the custom ICO workflow has been imported: 
+1. Select VSI - New Hitachi LUN ID Cluster. 
+2. Click Execute.
+3. Define the following inputs below in the Required Workflow Inputs Table:  
   
 #### Required Workflow Inputs  
-
 | Parameter |	                           Description |    
 | --- | --- |  
 | Storage Array |	                       Target VSP One Block storage system that will provide shared LDEV to UCS Servers |   
@@ -331,17 +334,14 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
 | Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Size |                                 Capacity of the VMFS datastore 10TiB is predefined |
 | Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
-    
 
 #### Workflow Outputs
-
 1. Creates VMFS datastore LDEV(s).   
 2. Allocates datastore volume(s) to all specified Host Groups.   
 3. Assigns LUN IDs.  
 4. Presents datastore volumes across all configured server paths using LUN ID 1 predefined.    
 
 #### Workflow Considerations
-
 1. Verify datastore visibility from all ESXi hosts.   
 2. Validate VMware multipathing functionality.   
 3. Confirm datastore discovery within vCenter.   
@@ -349,15 +349,6 @@ Automate creation and allocation of shared VMFS datastore volumes to all servers
 5. Ensure adequate pool capacity exists before execution. 
 6. For usage of workflow after LUN ID "1" has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow.   
    
-#### Workflow Execution  
-
-The following steps must be executed once the custom ICO workflow has been imported: 
-
-1. Select VSI - New Hitachi LUN ID Cluster. 
-2. Click Execute.
-3. Define the following inputs:  
-   a. Select Storage Array          
-   b. Enter Target Host Groups
 
 ### Hitachi ICO Workflow 5 Execution Sequence for "VSI – New Hitachi LUN ID 2 Cluster"   ********Complete this section*********************
 
