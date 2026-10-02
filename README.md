@@ -280,7 +280,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Host Group Name  | 	                   User defined Host Group Name, nomenclature predefined per fabric and users must define based on server being deployed, user must define server number by updating x value per server deployment requirements. | 
 | Port ID |                              Port IDs based on Reference Architecture have been predefined.
-| Host Group Number  | 	                 User defined Host Group Name, nomenclature predefined per fabric.  |    
+| Host Group Number  | 	                 Host Group Number 1 has been predefined,  users must iterate subsequent host group numbers based on the server being deployed  |    
 | UCS Fabric A & B WWPNs |               Server WWPNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment. | 
 | Host Mode | 	                         Host Mode	Host Mode VMware Extension predefined.| 
 | Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |   
