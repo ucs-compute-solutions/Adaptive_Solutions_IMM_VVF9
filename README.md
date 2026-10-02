@@ -177,7 +177,17 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 
 1. Target Hitachi VSP storage system must be onboarded and healthy within Cisco Intersight.  
 2. Storage parity groups must already exist on the selected storage array. Refer to Deployment Guide section Create Parity Groups and Dynamic Provisioning Pool on VSP One BHE with Administrator Command and Control Interface (CCI).
-3. Workflow is configured to mirror the reference VSI deployment architecture.  
+3. Workflow is configured to mirror the reference VSI deployment architecture.
+
+#### Workflow Execution  
+
+The following steps must be executed once the custom ICO workflow has been imported:
+
+1. Select VSI - New Hitachi Volume for Pool Volumes with format.
+2. Click Execute.
+3. Define the following inputs:  
+   a. Select Storage Array.  
+   b. Select Parity Group.   
 
 #### Required Workflow Inputs  
 
@@ -206,15 +216,7 @@ Automate the creation and Quick Format (QFMT) initialization of BASIC LDEVs that
 3. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group.  
 4. Verify successful volume formatting before proceeding.  
 
-#### Workflow Execution  
-
-The following steps must be executed once the custom ICO workflow has been imported:
-
-1. Select VSI - New Hitachi Volume for Pool Volumes with format.
-2. Click Execute.
-3. Define the following inputs:  
-   a. Select Storage Array.  
-   b. Select Parity Group.       
+    
 
 ### Hitachi ICO Workflow 2 Execution Sequence for "VSI - New Hitachi Pool"    
 
