@@ -187,7 +187,6 @@ The following steps must be executed once the custom ICO workflow has been impor
 3. Define the following inputs in the below Required Workflow Inputs table:    
 
 #### Required Workflow Inputs  
-
 | Parameter |	                      Description |    
 | --- | --- |  
 | Storage Array | 	                     Target Hitachi VSP storage system where volumes will be created and formatted |    
@@ -201,13 +200,11 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Force Format  |	                       Force Format is disabled and should not be modified. |  
 
 #### Workflow Outputs
-
 1. Creates eight (8) BASIC Pool Volumes with no Data Reduction Mode.  
 2. Creates 2,640 GB capacity per LDEV.    
 3. Performs Quick Format (QFMT) on all volumes.  
 
 #### Workflow Considerations
-
 1. To mirror the reference VSI deployment, execute this workflow twice, once for each parity group. 
 2. Record all generated LDEV IDs from the workflow execution logs.  
 3. These LDEV IDs are required for Workflow 2.    
@@ -236,6 +233,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Storage Array |	                  Target Hitachi VSP storage system where the pool will be created. |   
 | Pool ID |                        	Available Pool ID, for greenfield config ID 1 can be defined. | 
 | Pool Name | 	                    User-defined pool name. |  
+| Pool Type | 	                    HDD pool type has been hardoded and should not be modified.| 
 | Pool Volumes | 	                  LDEV IDs created in Workflow 1, select the + icon to include multiple BASIC LDEVs. |    
 | Warning Threshold | 	            Pool utilization warning threshold, predefined as 70%. |   
 | Depletion Threshold |             Pool utilization depletion threshold predefined as 80%. |   
@@ -254,8 +252,6 @@ The following steps must be executed once the custom ICO workflow has been impor
 4. Pool ID availability must be verified before execution.  
 5. Multiple pool volumes may be added using the "+" option.  
 6. Validate pool capacity and health after creation.
-
- 
 
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP One Block Host Group and Boot Path Creation to UCS Server"    
 
