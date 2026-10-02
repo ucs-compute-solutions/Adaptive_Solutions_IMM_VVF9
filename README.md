@@ -299,7 +299,7 @@ Automate creation of a boot volume, host group, WWPN registration, and LUN prese
 | Host Group Name  | 	                   User defined Host Group Name, nomenclature predefined per fabric  |  
 | Port ID |                            	 Port IDs based on deployment requirements, predefined based on VSI ports used in this document  | 
 | Host Group Number  | 	                 User defined Host Group Name, nomenclature predefined per fabric, user must define server number by updating x value per server deployment.  |    
-| UCS Fabric A & B WWPNs |               Server WWPNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment.|     | 
+| UCS Fabric A & B WWPNs |               Server WWPNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment. | 
 | Host Mode | 	                         Host Mode	Host Mode VMware Extension predefined.| 
 | Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined, and host mode VMware Extension predefined.  |   
 
