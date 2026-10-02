@@ -128,9 +128,9 @@ The steps that will need to have been completed include:
 
 NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation. This is only required if executing the imported playbooks individually  
 
-1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive07142026.yml
+1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
    with your customization values.  
-2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive07142026.yml.  
+2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
    Default variable values can be used. Prompts are available to override some variables.
 
 ### Hitachi Post Configuration Playbook Status
