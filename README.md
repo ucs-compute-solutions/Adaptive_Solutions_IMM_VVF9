@@ -331,7 +331,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Size |                                 Capacity of the VMFS datastore 10 is predefined |
 | Unit |                                 Unit TiB has been predefined |
-| Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
+| Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined. Filter for server ID such as 001, 002,003...etc to help identify host groups for Fabric A and B connections.  |  
 
 #### Workflow Outputs
 1. Creates VMFS datastore LDEV(s).   
@@ -375,7 +375,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Data Reduction Shared Volume Enabled | Data Reduction Shared Volume has been set to enabled and should not be modified. |
 | Size |                                 Capacity of the VMFS datastore 10 is predefined |
 | Unit |                                 Unit TiB has been predefined |
-| Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined.   |  
+| Target Host Groups | 	                 Host Groups that will access the datastore based on Fabric A and B connections respectively into CTL1 and CTL2 ports. Fabric A ports CL1-A and CL2-A and Fabric B ports CL1-B and CL2-B are predefined. Filter for server ID such as 001, 002,003...etc to help identify host groups for Fabric A and B connections.  |  
 
 #### Workflow Outputs
 1. Creates VMFS datastore LDEV(s).   
