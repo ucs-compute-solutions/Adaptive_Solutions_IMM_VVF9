@@ -154,7 +154,7 @@ The following steps must be completed prior to the execution of the Hitachi ICO 
 3. Create of parity groups must have been completed on the array.
 4. [Cisco  ICO onboarding of Hitachi VSP One Block](https://www.hitachivantara.com/en-us/pdf/architecture-guide/integrating-virtual-storage-platform-with-cisco-intersight.pdf)
 
-To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_workflows.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) under section "Import Custom Workflows".
+To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_Hitachi_Intersight_VVF9_Workflows_Day_0.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) under section "Import Custom Workflows".
 
 In the Github repository also download to your desktop the following file Hitachi_VSI_Provisioning_Worksheet_Formatted_v2.docx to assist you in documenting the values to be used for the ICO workflows.  
 
@@ -226,6 +226,20 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 3. Required LDEV IDs have been documented from Workflow 1.
 4. Target storage array is onboarded and manageable through Cisco Intersight.
 
+#### Workflow Execution 
+The following steps must be executed once the custom ICO workflow has been imported:
+
+1. Select VSI - New Hitachi Pool. 
+2. Click Execute. 
+3. Define the following inputs:  
+   a. Select Storage Array  
+   b. Enter Pool ID   
+   c. Enter Pool Name  
+   d. Enter Pool Volumes   
+   e. Enter Warning Threshold  
+   f. Enter Depletion Threshold  
+   g. Enter Suspend Snapshot    
+
 #### Required Workflow Inputs  
 
 | Parameter |	                      Description |    
@@ -254,20 +268,7 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 5. Multiple pool volumes may be added using the "+" option.  
 6. Validate pool capacity and health after creation.
 
-#### Workflow Execution 
-
-The following steps must be executed once the custom ICO workflow has been imported:
-
-1. Select VSI - New Hitachi Pool. 
-2. Click Execute. 
-3. Define the following inputs:  
-   a. Select Storage Array  
-   b. Enter Pool ID   
-   c. Enter Pool Name  
-   d. Enter Pool Volumes   
-   e. Enter Warning Threshold  
-   f. Enter Depletion Threshold  
-   g. Enter Suspend Snapshot     
+ 
 
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP One Block Host Group and Boot Path Creation to UCS Server"    
 
