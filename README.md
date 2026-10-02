@@ -233,7 +233,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Storage Array |	                  Target Hitachi VSP storage system where the pool will be created. |   
 | Pool ID |                        	Available Pool ID, for greenfield config ID 1 can be defined. | 
 | Pool Name | 	                    User-defined pool name. |  
-| Pool Type | 	                    HDD pool type has been hardoded and should not be modified.| 
+| Pool Type | 	                    HDP pool type has been hardoded and should not be modified.| 
 | Pool Volumes | 	                  LDEV IDs created in Workflow 1, select the + icon to include multiple BASIC LDEVs. |    
 | Warning Threshold | 	            Pool utilization warning threshold, predefined as 70%. |   
 | Depletion Threshold |             Pool utilization depletion threshold predefined as 80%. |   
