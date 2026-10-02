@@ -256,7 +256,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP One Block Host Group and Boot Path Creation to UCS Server"    
 
 #### Purpose   
-Automate creation of a boot volume, host group, WWPN registration, and LUN presentation for a single Cisco UCS server per execution of workflow.   
+Automate creation of a boot volume, host group, WWPN registration, and LUN ID 0 presentation for a single Cisco UCS server per execution of workflow.   
 
 #### Prerequisites
 1. Workflow 2 completed successfully.
