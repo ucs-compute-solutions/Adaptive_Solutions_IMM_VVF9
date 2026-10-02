@@ -184,7 +184,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 
 1. Select VSI - New Hitachi Volume for Pool Volumes with format.
 2. Click Execute.
-3. Define the following inputs in the below Required Workflow Inputs:    
+3. Define the following inputs in the below Required Workflow Inputs table:    
 
 #### Required Workflow Inputs  
 
@@ -228,14 +228,7 @@ Automate creation of a Hitachi Dynamic Provisioning (HDP) Pool using previously 
 The following steps must be executed once the custom ICO workflow has been imported:
 1. Select VSI - New Hitachi Pool. 
 2. Click Execute. 
-3. Define the following inputs:  
-   a. Select Storage Array  
-   b. Enter Pool ID   
-   c. Enter Pool Name  
-   d. Enter Pool Volumes   
-   e. Enter Warning Threshold  
-   f. Enter Depletion Threshold  
-   g. Enter Suspend Snapshot    
+3. Define the following inputs in the below Required Workflow Inputs table.   
 
 #### Required Workflow Inputs  
 | Parameter |	                      Description |    
