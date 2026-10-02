@@ -184,9 +184,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 
 1. Select VSI - New Hitachi Volume for Pool Volumes with format.
 2. Click Execute.
-3. Define the following inputs:  
-   a. Select Storage Array.  
-   b. Select Parity Group.   
+3. Define the following inputs in the below Required Workflow Inputs:    
 
 #### Required Workflow Inputs  
 
