@@ -216,8 +216,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 2. Click Execute.
 3. Define the following inputs:  
    a. Select Storage Array.  
-   b. Select Parity Group.  
-   c. Capacity Override (Optional).     
+   b. Select Parity Group.       
 
 ### Hitachi ICO Workflow 2 Execution Sequence for "VSI - New Hitachi Pool"    
 
@@ -273,7 +272,7 @@ The following steps must be executed once the custom ICO workflow has been impor
    d. Enter Pool Volumes   
    e. Enter Warning Threshold  
    f. Enter Depletion Threshold  
-   g. Enter Suspend Snapshot (Optional)    
+   g. Enter Suspend Snapshot     
 
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP Host Group and Boot Path Creation to UCS Server"    
 
