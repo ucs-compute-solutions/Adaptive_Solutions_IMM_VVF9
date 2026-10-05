@@ -86,7 +86,7 @@ The steps that will need to have been completed include:
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)   
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
    Refer to the README.md file.
-3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with    Ansible" section in this README.md file.  
+3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for Converged Infrastructure IMM configuration with    Ansible" section in this README.md file.  
 4. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:              $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
 | File name |	                                  Description |    
@@ -110,8 +110,7 @@ The steps that will need to have been completed include:
 ### Hitachi Playbook Usage Prerequisites
 
 1. During the Hitachi Professional Services installation of the VSP One BHE, one or more parity groups will have been created.
-   Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
-    "raidcom get parity_grp"
+   Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command: "raidcom get parity_grp".
 2. Playbook bhe_day0_vsp_one_create_parity_pool.yml has been customized to use two parity groups. If less than two parity groups or
    more than two parity groups will be used, this playbooks will have to be adjusted to reflect the actual number of parity groups,
    the ldev_ids to format, and the ldev_ids to use in creating the pool. 
