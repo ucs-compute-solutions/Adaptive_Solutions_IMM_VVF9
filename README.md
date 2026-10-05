@@ -114,7 +114,9 @@ The steps that will need to have been completed include:
 
 1. During the Hitachi Professional Services installation of the VSP One BHE, one or more parity groups will have been created.
    Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command: "raidcom get parity_grp".
+   
    NOTE - EXISTING PARITY GROUPS SHOULD NOT HAVE ANY LDEVS ASSIGNED TO THEM.
+   
 3. Playbook bhe_day0_vsp_one_create_parity_pool.yml has been customized to use two parity groups. If less than two parity groups or
    more than two parity groups will be used, this playbooks will have to be adjusted to reflect the actual number of parity groups,
    the ldev_ids to format, and the ldev_ids to use in creating the pool. 
