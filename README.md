@@ -89,15 +89,18 @@ The steps that will need to have been completed include:
 4. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with Ansible" section in this READMe.md file.  
 5. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
-   - bhe_day0_expressd_interactive.yml           (Master playbook can be used to override some variable values and to execute all playbooks)
-   - bhe_day0_vsp_one_expressd_prompt_check.yml  (Used by master playbook to validate IP address) 
-   - bhe_day0_vsp_one_port.yml                   (Subordinate playbook)
-   - bhe_day0_vsp_one_create_parity_pool.yml     (Subordinate playbook)
-   - bhe_day0_vsp_one_server_multiple_hbas.yml   (Subordinate playbook)
-   - bhe_day0_vsp_one_create_boot_ldevs.yml      (Subordinate playbook)  
-   - bhe_day0_vsp_one_create_shared_ldev.yml     (Subordinate playbook)  
-   - bhe_day0_vsp_one_hg_add_luns_to_hg.yml      (Subordinate playbook)  
-   - bhe_day0_vsp_one_hg_rename_wwn.yml          (Subordinate playbook)    
+| File name |	                                  Description |    
+| --- | --- |
+
+| bhe_day0_expressd_interactive.yml |           (Master playbook can be used to override some variable values and to execute all playbooks) |
+| bhe_day0_vsp_one_expressd_prompt_check.yml |  (Used by master playbook to validate IP address) |
+| bhe_day0_vsp_one_port.yml |                   (Subordinate playbook) |
+| bhe_day0_vsp_one_create_parity_pool.yml |     (Subordinate playbook) |
+| bhe_day0_vsp_one_server_multiple_hbas.yml |   (Subordinate playbook) |
+| bhe_day0_vsp_one_create_boot_ldevs.yml |      (Subordinate playbook) |  
+| bhe_day0_vsp_one_create_shared_ldev.yml |     (Subordinate playbook) |  
+| bhe_day0_vsp_one_hg_add_luns_to_hg.yml |      (Subordinate playbook) |  
+| bhe_day0_vsp_one_hg_rename_wwn.yml  |         (Subordinate playbook) |    
 
 ### Hitachi Storage Modules Access and Configuration
 
