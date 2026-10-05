@@ -90,7 +90,7 @@ The steps that will need to have been completed include:
 5. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
    - bhe_day0_expressd_interactive.yml
-   - bhe_day0_vsp_one_expressd_prompt_check.yml 
+   - bhe_day0_vsp_one_expressd_prompt_check.yml   
    - bhe_day0_vsp_one_port.yml
    - bhe_day0_vsp_one_create_parity_pool.yml
    - bhe_day0_vsp_one_server_multiple_hbas.yml
