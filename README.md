@@ -89,15 +89,15 @@ The steps that will need to have been completed include:
 4. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with Ansible" section in this READMe.md file.  
 5. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
-   - bhe_day0_expressd_interactive.yml
-   - bhe_day0_vsp_one_expressd_prompt_check.yml   
-   - bhe_day0_vsp_one_port.yml
-   - bhe_day0_vsp_one_create_parity_pool.yml
-   - bhe_day0_vsp_one_server_multiple_hbas.yml
-   - bhe_day0_vsp_one_create_boot_ldevs.yml  
-   - bhe_day0_vsp_one_create_shared_ldev.yml  
-   - bhe_day0_vsp_one_hg_add_luns_to_hg.yml  
-   - bhe_day0_vsp_one_hg_rename_wwn.yml    
+   - bhe_day0_expressd_interactive.yml           (Master playbook can be used to override some variable values and to execute all playbooks)
+   - bhe_day0_vsp_one_expressd_prompt_check.yml  (Used by master playbook to validate IP address) 
+   - bhe_day0_vsp_one_port.yml                   (Subordinate playbook)
+   - bhe_day0_vsp_one_create_parity_pool.yml     (Subordinate playbook)
+   - bhe_day0_vsp_one_server_multiple_hbas.yml   (Subordinate playbook)
+   - bhe_day0_vsp_one_create_boot_ldevs.yml      (Subordinate playbook)  
+   - bhe_day0_vsp_one_create_shared_ldev.yml     (Subordinate playbook)  
+   - bhe_day0_vsp_one_hg_add_luns_to_hg.yml      (Subordinate playbook)  
+   - bhe_day0_vsp_one_hg_rename_wwn.yml          (Subordinate playbook)    
 
 ### Hitachi Storage Modules Access and Configuration
 
@@ -107,15 +107,15 @@ The steps that will need to have been completed include:
 
 ### Hitachi Storage Module Playbook Usage  
   
-1. All playbooks have been modified to match the variable values used in the CVD Deployment Guide.
-2. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
+1. All playbooks have been customized to match the CVD Deployment Guide variable settings..
+2. If the default playbook variable settings will not be used, each playbook's variable settings can be customized.  
+3. Playbooks are interdependent.  Variable values are not passed between the imported playbooks.
+   For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.
+5. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
    used to validate an IP address.  
-4. Modifying the playbooks to deviate from the default CVD Deployment Guide variable values must be
-   completed in the individual playbooks.  ADD A LINK HERE FOR THE PUBLISHED URL OF THE DEPL GD.
-5. Playbooks are interdependent. For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.  Variable values are not passed between the imported playbooks.
-6. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks.  
-7. Playbook "bhe_day0_expressd_interactive.yml" will prompt the user to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks.  
-8. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
+8. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks.  
+9. Playbook "bhe_day0_expressd_interactive.yml" will prompt the user to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks.  
+10. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
    .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars  
 
 ### Hitachi Playbook Execution Prerequisites
