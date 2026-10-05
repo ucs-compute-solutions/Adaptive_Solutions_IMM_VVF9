@@ -79,7 +79,7 @@ Execution of the playbooks in these repositories set up a Server Profile Templat
 ## Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
 
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible sample playbooks for
-configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE) CVD.  
+configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE).  
 
 The steps that will need to have been completed include:
 
