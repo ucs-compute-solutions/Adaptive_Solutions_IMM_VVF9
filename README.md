@@ -91,7 +91,6 @@ The steps that will need to have been completed include:
 
 | File name |	                                  Description |    
 | --- | --- |
-
 | bhe_day0_expressd_interactive.yml |           (Master playbook can be used to override some variable values and to execute all playbooks) |  
 | bhe_day0_vsp_one_expressd_prompt_check.yml |  (Used by master playbook to validate IP address) |  
 | bhe_day0_vsp_one_port.yml |                   (Subordinate playbook) |  
