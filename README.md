@@ -109,10 +109,12 @@ The steps that will need to have been completed include:
 
 ### Hitachi Playbook Usage Prerequisites
 
-1. During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created.
+1. During the Hitachi Professional Services installation of the VSP One BHE, one or more parity groups will have been created.
    Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
     "raidcom get parity_grp"
-2. In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to match the output of the "raidcom get parity_grp" ids.
+2. Playbook bhe_day0_vsp_one_create_parity_pool.yml has been customized to use two parity groups. If less than two parity groups or
+   more than two parity groups will be used, this playbooks will have to be adjusted to reflect the actual number of parity groups,
+   the ldev_ids to format, and the ldev_ids to use in creating the pool. 
 
 ### Hitachi Storage Module Playbook Usage  
   
@@ -131,7 +133,7 @@ The steps that will need to have been completed include:
 1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
    and subordinate playbooks with the customized values. 
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
-   Default variable values can be used. Prompts are available to override some variables.
+   Default variable values will be used. Prompts are available to override some variables.
 
 ### Hitachi Post Configuration Playbook Status
 
