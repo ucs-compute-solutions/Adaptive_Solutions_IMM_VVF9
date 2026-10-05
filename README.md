@@ -76,7 +76,9 @@ To execute the example automation in this repo, update the inventory and variabl
 
 Execution of the playbooks in these repositories set up a Server Profile Template in Intersight. After successfully executing the playbooks, one or more server profiles can easily derived and attached to the compute node from Intersight dashboard. 
 
-## Hitachi Virtual Storage Platform One Block High End Storage Modules for Red Hat Ansible  
+## Hitachi Virtual Storage Platform One Block High End (VSP One BHE) Storage Modules for Red Hat Ansible
+
+The playbooks in this section are only applicable for a Day-0 Greenfield configuration of the VSP One BHE.
 
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible sample playbooks for
 configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE).  
