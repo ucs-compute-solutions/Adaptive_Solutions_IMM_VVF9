@@ -86,8 +86,8 @@ The steps that will need to have been completed include:
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)   
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
    Refer to the README.md file.
-4. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with Ansible" section in this READMe.md file.  
-5. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
+3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with    Ansible" section in this README.md file.  
+4. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:              $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
 | File name |	                                  Description |    
 | --- | --- |
@@ -107,32 +107,29 @@ The steps that will need to have been completed include:
 2. Post installation of the Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7, all Hitachi playbooks
    are available at the following location: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks
 
+### Hitachi Playbook Usage Prerequisites
+
+1. During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created.
+   Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
+    "raidcom get parity_grp"
+2. In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to match the output of the "raidcom get parity_grp" ids.
+
 ### Hitachi Storage Module Playbook Usage  
   
-1. All playbooks have been customized to match the CVD Deployment Guide variable settings..
+1. The majority of playbooks have been customized to match the CVD Deployment Guide variable settings. The only exception is the
+   previously mentioned playbook bhe_day0_vsp_one_create_parity_pool.yml.
 2. If the default playbook variable settings will not be used, each playbook's variable settings can be customized.  
 3. Playbooks are interdependent.  Variable values are not passed between the imported playbooks.
    For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.
 4. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
    used to validate an IP address.  
-5. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks will prompt the user
+5. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks and will prompt the user
    to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks
-6. Optional - Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
-   .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars  
-
-### Hitachi Playbook Execution Prerequisites
-
-1. During the Hitachi Professional Services installation of the VSP One BHE, several parity groups will have been created.
-   Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command:  
-    "raidcom get parity_grp"
-2. In the playbook bhe_day0_vsp_one_create_parity_pool.yml update the parity group ids to be used for the deployment.
 
 ### Hitachi Playbook Execution Sequence
 
-NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, include --ask-vault-pass in the invocation. This is only required if executing the imported playbooks individually  
-
 1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
-   with your customization values.  
+   and subordinate playbooks with the customized values. 
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
    Default variable values can be used. Prompts are available to override some variables.
 
@@ -140,7 +137,7 @@ NOTE: If ansible_vault_storage_var_yml has been encrypted with ansible-vault, in
 
 Execution of the playbooks will result in the configuration of the following elements:  
 1. FC-SCSI Port configuration.  
-2. DDP Pools.   
+2. DDP Pool.   
 3. Register servers and create array port paths.  
 4. Boot LDEVs.  
 5. Shared LDEVS.  
