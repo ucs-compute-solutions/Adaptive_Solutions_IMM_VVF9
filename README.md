@@ -84,9 +84,10 @@ configuration of the Hitachi Virtual Storage Platform One Block High End (VSP On
 The steps that will need to have been completed include:
 
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)   
-2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
-3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with Ansible" section in this READMe.md file.  
-4. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
+2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)
+   Refer to the README.md file.
+4. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for    Converged Infrastructure IMM configuration with Ansible" section in this READMe.md file.  
+5. With the prerequisite steps complete, copy the yml files listed below from the repository root directory to:            $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
    - bhe_day0_expressd_interactive.yml  
    - bhe_day0_vsp_one_expressd_prompt_check.yml  
