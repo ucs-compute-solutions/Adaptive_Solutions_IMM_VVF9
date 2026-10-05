@@ -78,7 +78,8 @@ Execution of the playbooks in these repositories set up a Server Profile Templat
 
 ## Hitachi Virtual Storage Platform One Block High End (VSP One BHE) Storage Modules for Red Hat Ansible
 
-The playbooks in this section are only applicable for a Day-0 Greenfield configuration of the VSP One BHE.
+The playbooks in this section are only applicable for a Day-0 Greenfield configuration of the VSP One BHE. The VSP One BHE  
+should have only been configured with parity group(s).
 
 The following steps must be completed prior to the execution of the Hitachi Storage Module Ansible sample playbooks for
 configuration of the Hitachi Virtual Storage Platform One Block High End (VSP One BHE).  
