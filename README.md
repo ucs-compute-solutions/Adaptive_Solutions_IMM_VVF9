@@ -113,11 +113,11 @@ The steps that will need to have been completed include:
 2. If the default playbook variable settings will not be used, each playbook's variable settings can be customized.  
 3. Playbooks are interdependent.  Variable values are not passed between the imported playbooks.
    For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.
-5. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
+4. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
    used to validate an IP address.  
-8. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks.  
-9. Playbook "bhe_day0_expressd_interactive.yml" will prompt the user to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks.  
-10. Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
+5. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks will prompt the user
+   to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks
+6. Optional - Update "ansible_vault_vars" with the VSP One BHE userid id and password to execute imported playbooks individually.
    .ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/ansible_vault_vars  
 
 ### Hitachi Playbook Execution Prerequisites
