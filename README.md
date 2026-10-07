@@ -261,12 +261,12 @@ The following steps must be executed once the custom ICO workflow has been impor
 ### Hitachi ICO Workflow 3 Execution Sequence for "VSI – Hitachi VSP One Block Host Group and Boot Path Creation to UCS Server"    
 
 #### Purpose   
-Automate creation of a boot volume, host group, WWPN registration, and LUN ID 0 presentation for a single Cisco UCS server per execution of workflow.   
+Automate creation of a boot volume, host group, WWN registration, and LUN ID 0 presentation for a single Cisco UCS server per execution of workflow.   
 
 #### Prerequisites
 1. Workflow 2 completed successfully.
 2. HDP Pool exists on the selected storage array.   
-3. UCS server WWPNs are available and noted for both SAN fabrics.   
+3. UCS server WWNs are available and noted for both SAN fabrics.   
 4. Target storage array is onboarded and manageable through Cisco Intersight.
 
 #### Workflow Execution  
@@ -286,7 +286,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 | Host Group Name  | 	                   User defined Host Group Name, nomenclature predefined per fabric and users must define based on server being deployed, user must define server number by updating x value per server deployment requirements. | 
 | Port ID |                              Port IDs based on Reference Architecture have been predefined.
 | Host Group Number  | 	                 Host Group Number 1 has been predefined,  users must iterate subsequent host group numbers based on the server being deployed  |    
-| UCS Fabric A & B WWNs |               Server WWPNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment. | 
+| UCS Fabric A & B WWNs |               Server WWNs for Fabric A & B have been partially predefined using Cisco UCS vHBA identifier 20000025B5XXXXX, the subsequent X’s must be defined based on customer environment. | 
 | Host Mode | 	                         Host Mode	Host Mode VMware Extension predefined.| 
 | Host Mode Options | 	                 Host Mode Options (HMO) 54, 63, 68, 110 predefined.  |   
 
@@ -396,7 +396,8 @@ The following steps must be executed once the custom ICO workflow has been impor
 3. Confirm datastore discovery within vCenter.   
 4. Verify consistent presentation across Fabric A and Fabric B.   
 5. Ensure adequate pool capacity exists before execution. 
-6. For usage of workflow after LUN ID "2" has been provisioned, Storage Vendor LUN Options value must be modified for continued iteration use of this workflow. 
+6. For usage of workflow after LUN ID “2” has been provisioned, Storage Vendor LUN Options value within each New Hitachi LUN ICO task must be modified via Edit Mapping > Advanced Mapping for continued iteration use of this workflow.  Advanced Mapping logic can be referenced below, where X is the desired LUN ID mapping: 
 
+Note:  	{"PlatformType": "storage.HitachiArray","VolumeName": "${NewHitachiVolume1.output.VolumeName}", "LUN": X}
   
 
