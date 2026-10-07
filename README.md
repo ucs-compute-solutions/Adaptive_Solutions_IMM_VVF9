@@ -125,7 +125,7 @@ The steps that will need to have been completed include:
   
 1. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks and will prompt the user
    to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks.
-2. Playbooks have been customized to match the CVD Deployment Guide variable settings.
+2. Playbooks have been customized to match the CVD Deployment Guide variable value settings for parity groups, port, port speeds , LDEV IDs, UCS WWNs for Fabric A and B, Shared Volume Names, and Server names.
 3. If the default playbook variable settings will not be used, each playbook's variable settings can be customized.  Users have the ability to use standalone playbooks, but are recommended to use the master "bhe_day0_expressd_interactive.yml".
 4. Playbooks are interdependent when used standalone.  Variable values are not passed between the imported playbooks.
    For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.
@@ -135,7 +135,7 @@ The steps that will need to have been completed include:
 
 ### Hitachi Playbook Execution Sequence
 
-1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml vars with default parameters, otherwise       users are prompted for override automatically during script execution.
+1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml vars with default parameters, otherwise users are prompted for override for storage pool ID, storage pool name,    BOOT LDEV prefix, port speed, Boot LDEV capacity, and Shared LDEV capacity automatically during script execution.
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
    Default variable values will be used. Prompts are available to override some variables.
 
