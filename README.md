@@ -116,27 +116,26 @@ The steps that will need to have been completed include:
    Using Hitachi VSP One BHE Administrator CCI - verify the available parity groups with the following command: "raidcom get parity_grp".
    
    NOTE - EXISTING PARITY GROUPS SHOULD NOT HAVE ANY LDEVS ASSIGNED TO THEM.
-   
-3. Playbook bhe_day0_vsp_one_create_parity_pool.yml has been customized to use two parity groups. If less than two parity groups or
+
+2. Playbook bhe_day0_vsp_one_create_parity_pool.yml has been customized to use two parity groups. If less than two parity groups or
    more than two parity groups will be used, this playbooks will have to be adjusted to reflect the actual number of parity groups,
    the ldev_ids to format, and the ldev_ids to use in creating the pool. 
 
 ### Hitachi Storage Module Playbook Usage  
   
-1. The majority of playbooks have been customized to match the CVD Deployment Guide variable settings. The only exception is the
-   previously mentioned playbook bhe_day0_vsp_one_create_parity_pool.yml.
-2. If the default playbook variable settings will not be used, each playbook's variable settings can be customized.  
-3. Playbooks are interdependent.  Variable values are not passed between the imported playbooks.
+1. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks and will prompt the user
+   to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks.
+2. Playbooks have been customized to match the CVD Deployment Guide variable settings.
+3. If the default playbook variable settings will not be used, each playbook's variable settings can be customized.  Users have the ability to use standalone playbooks, but are recommended to use the master "bhe_day0_expressd_interactive.yml".
+4. Playbooks are interdependent when used standalone.  Variable values are not passed between the imported playbooks.
    For example, LDEV ID values must be used consistently in all the playbooks for the CVD Deployment.
-4. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
+5. Playbook "bhe_day0_vsp_one_expressd_prompt_check.yml" does not require modification since it is only
    used to validate an IP address.  
-5. Playbook "bhe_day0_expressd_interactive.yml" is the master playbook invoking other imported playbooks and will prompt the user
-   to enter the Hitachi VSP One BHE userid and password for execution of the imported playbooks
+
 
 ### Hitachi Playbook Execution Sequence
 
-1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml
-   and subordinate playbooks with the customized values. 
+1. If deviating from the default CVD Deployment configuration, in the playbooks directory, update bhe_day0_expressd_interactive.yml vars with default parameters, otherwise       users are prompted for override automatically during script execution.
 2. Invoke the interactive playbook with the following command: ansible-playbook bhe_day0_expressd_interactive.yml.  
    Default variable values will be used. Prompts are available to override some variables.
 
@@ -144,7 +143,7 @@ The steps that will need to have been completed include:
 
 Execution of the playbooks will result in the configuration of the following elements:  
 1. FC-SCSI Port configuration.  
-2. DDP Pool.   
+2. HDP Pool.   
 3. Register servers and create array port paths.  
 4. Boot LDEVs.  
 5. Shared LDEVS.  
