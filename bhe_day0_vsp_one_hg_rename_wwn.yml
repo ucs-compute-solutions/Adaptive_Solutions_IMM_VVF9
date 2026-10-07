@@ -1,0 +1,353 @@
+---
+# ###################################################################
+# Example : Hostgroup Playbook
+# Update the playbook for you deployment
+# ************************************************************************************************
+# NOTE - B85 will use ports CL1-A, CL2-A, CL1-B, and CL2-B. Update the playbook when ready to test
+# ************************************************************************************************
+# Post execution run the following playbook day0_vsp_one_hostgroup_facts.yml
+# ###################################################################
+- name: Hostgroup Module
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - ../ansible_vault_vars/ansible_vault_storage_var.yml
+
+  vars:
+    # Common connection info for all tasks
+    connection_info:
+      address: "{{ storage_address }}"
+      username: "{{ vault_storage_username }}"
+      password: "{{ vault_storage_secret }}"
+
+  tasks:
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 1st server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-001 CL1-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-001"
+          port_id: "CL1-A"
+          wwns:
+            - wwn: "20000025b5210a00"
+              nickname: "ESX-001-Fabric-A"
+      register: result_cl1a_001
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1a_001
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 1st server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-001 CL2-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-001"
+          port_id: "CL2-A"
+          wwns:
+            - wwn: "20000025b5210a00"
+              nickname: "ESX-001-Fabric-A"
+      register: result_cl2a_001
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2a_001
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 1st server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-001 CL1-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-001"
+          port_id: "CL1-B"
+          wwns:
+            - wwn: "20000025b5210b00"
+              nickname: "ESX-001-Fabric-B"
+      register: result_cl1b_001
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1b_001
+    
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 1st server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-001 CL2-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-001"
+          port_id: "CL2-B"
+          wwns:
+            - wwn: "20000025b5210b00"
+              nickname: "ESX-001-Fabric-B"
+      register: result_cl2b_001
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2b_001
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 2nd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-002 CL1-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-002"
+          port_id: "CL1-A"
+          wwns:
+            - wwn: "20000025b5210a01"
+              nickname: "ESX-002-Fabric-A"
+      register: result_cl1a_002
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1a_002
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 2nd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-002 CL2-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-002"
+          port_id: "CL2-A"
+          wwns:
+            - wwn: "20000025b5210a01"
+              nickname: "ESX-002-Fabric-A"
+      register: result_cl2a_002
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2a_002
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 2nd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-002 CL1-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-002"
+          port_id: "CL1-B"
+          wwns:
+            - wwn: "20000025b5210b01"
+              nickname: "ESX-002-Fabric-B"
+      register: result_cl1b_002
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1b_002
+    
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 2nd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-002 CL2-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-002"
+          port_id: "CL2-B"
+          wwns:
+            - wwn: "20000025b5210b01"
+              nickname: "ESX-002-Fabric-B"
+      register: result_cl2b_002
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2b_002
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 3rd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-003 CL1-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-003"
+          port_id: "CL1-A"
+          wwns:
+            - wwn: "20000025b5210a02"
+              nickname: "ESX-003-Fabric-A"
+      register: result_cl1a_003
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1a_003
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 3rd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-003 CL2-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-003"
+          port_id: "CL2-A"
+          wwns:
+            - wwn: "20000025b5210a02"
+              nickname: "ESX-003-Fabric-A"
+      register: result_cl2a_003
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2a_003
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 3rd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-003 CL1-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-003"
+          port_id: "CL1-B"
+          wwns:
+            - wwn: "20000025b5210b02"
+              nickname: "ESX-003-Fabric-B"
+      register: result_cl1b_003
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1b_003
+    
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 3rd server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-003 CL2-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-003"
+          port_id: "CL2-B"
+          wwns:
+            - wwn: "20000025b5210b02"
+              nickname: "ESX-003-Fabric-B"
+      register: result_cl2b_003
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2b_003
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 4th server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-004 CL1-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-004"
+          port_id: "CL1-A"
+          wwns:
+            - wwn: "20000025b5210a03"
+              nickname: "ESX-004-Fabric-A"
+      register: result_cl1a_004
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1a_004
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 4th server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-004 CL2-A
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-004"
+          port_id: "CL2-A"
+          wwns:
+            - wwn: "20000025b5210a03"
+              nickname: "ESX-004-Fabric-A"
+      register: result_cl2a_004
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2a_004
+
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 4th server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-004 CL1-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-004"
+          port_id: "CL1-B"
+          wwns:
+            - wwn: "20000025b5210b03"
+              nickname: "ESX-004-Fabric-B"
+      register: result_cl1b_004
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl1b_004
+    
+    ####################################################################
+    # Task Name : Change or unset nickname of a wwn (existing wwn) 4th server
+    ####################################################################
+    - name: Change or unset nickname of a wwn (existing wwn) UCS-ESX-004 CL2-B
+      hitachivantara.vspone_block.vsp.hv_hg:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          state: "add_wwn"
+          name: "UCS-ESX-004"
+          port_id: "CL2-B"
+          wwns:
+            - wwn: "20000025b5210b03"
+              nickname: "ESX-004-Fabric-B"
+      register: result_cl2b_004
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_cl2b_004
+
+
+
+
+
+
+
+
+

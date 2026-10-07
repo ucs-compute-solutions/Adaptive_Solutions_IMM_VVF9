@@ -1,0 +1,114 @@
+---
+# ###################################################################
+# Example : Create Storage Pool
+# Prerequisites - Available parity group(s). No ldevs should be on the parity groups.
+# ###################################################################
+- name: Multi Logical Device Creation Module
+  hosts: localhost
+  gather_facts: false
+
+  vars_files:
+    - ../ansible_vault_vars/ansible_vault_storage_var.yml
+
+  vars:
+    # Common connection info for all tasks
+    connection_info:
+      address: "{{ storage_address }}"
+      username: "{{ vault_storage_username }}"
+      password: "{{ vault_storage_secret }}"
+
+  tasks:
+    # ####################################################################
+    # Task Name : Create multiple ldevs using parity group
+    # Note - This task is for adding ldevs to the first parity group.
+    # Note - Parity group id must be unique.
+    # Note - Modify the start and end ldev_id range based on your requirements. 
+    #        Start and end ldev id range must be consistent in this deployment.
+    # ####################################################################
+    - name: Create multiple ldevs using parity group 1-1
+      hitachivantara.vspone_block.vsp.hv_ldev_bulk:
+        connection_info: "{{ connection_info }}"
+        state: present
+        spec:
+          start_ldev_id: 16
+          end_ldev_id: 23
+          parity_group_id: "1-1"
+          size: "2640GB"
+          number_of_ldevs: 8
+          names:
+            base_name: "parity-group1-volume"
+            start_number: 16
+            number_of_digits: 3
+      register: result_create_ldevs_pg_1
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_create_ldevs_pg_1
+
+    # ####################################################################
+    # Task Name : Create multiple ldevs using parity group
+    # Note - This task is for adding ldevs to the second parity group.
+    # Note - Parity group id must be unique.
+    # Note - Modify the start and end ldev_id range based on your requirments. 
+    #        Start and end ldev id range must be consistent in this deployment.
+    # ####################################################################
+    - name: Create multiple ldevs using parity group 1-2
+      hitachivantara.vspone_block.vsp.hv_ldev_bulk:
+        connection_info: "{{ connection_info }}"
+        state: present
+        spec:
+          start_ldev_id: 24
+          end_ldev_id: 31
+          parity_group_id: "1-2"
+          size: "2640GB"
+          number_of_ldevs: 8
+          names:
+            base_name: "parity-group2-volume"
+            start_number: 24
+            number_of_digits: 3
+      register: result_create_ldevs_pg_2
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_create_ldevs_pg_2
+
+    # #######################################################################
+    # Task Name : Format multiple ldevs
+    # Note - Format all the ldevs for the first and second parity group.
+    # #######################################################################
+    - name: Format multiple volumes
+      hitachivantara.vspone_block.vsp.hv_ldev_bulk:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          ldev_ids: [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+          should_format_volume: true
+          format_type: "quick"
+      register: result_qformat
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_qformat
+
+    # ###########################################################################################
+    # Task Name : Create a storage pool with a specific pool ID and start and end LDEV numbers
+    # Ensure the LDEVs specified by the start_ldev_id and end_ldev_id range are in NML state
+    # and size of each LDEV is greater than 8.0GB.
+    # All the ldevs from the first and second parity group will be added to the
+    # storage pool.
+    # ###########################################################################################
+    - name: Create a storage pool with a specific pool ID and start and end LDEV numbers
+      hitachivantara.vspone_block.vsp.hv_storagepool:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          id: 1
+          name: "UCS_Pool"
+          type: "HDP"
+          start_ldev_id: 16
+          end_ldev_id: 31
+      register: result_create_pool
+
+    - name: Debug the result variable
+      ansible.builtin.debug:
+        var: result_create_pool
