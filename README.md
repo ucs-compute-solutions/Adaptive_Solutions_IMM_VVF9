@@ -90,7 +90,8 @@ The steps that will need to have been completed include:
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
    Refer to the README.md file.
 3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for Converged Infrastructure IMM configuration with    Ansible" section in this README.md file.  
-4. With the prerequisite steps complete, copy the yml files listed below from https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main root directory to:              $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
+4. With the prerequisite steps complete, copy the yml files listed below from https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main/Cisco%20and%20Hitachi%20Adaptive%20Solutions%20Ansible%20Playbooks
+   directory to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct:
 
 | File name |	                                  Description |    
 | --- | --- |
