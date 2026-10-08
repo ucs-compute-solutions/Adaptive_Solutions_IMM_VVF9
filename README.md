@@ -158,10 +158,10 @@ The following steps must be completed prior to the execution of the Hitachi ICO 
 
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)
 2. [Configuration of VSP One BHE FC-SCSI Ports](UPDATE WITH THE PUBLISHED CVD Deployment Guide Link)
-3. Create of parity groups must have been completed on the array.
+3. Creatation of parity groups must have been completed on the array.
 4. [Cisco  ICO onboarding of Hitachi VSP One Block](https://www.hitachivantara.com/en-us/pdf/architecture-guide/integrating-virtual-storage-platform-with-cisco-intersight.pdf)
 
-To deploy these custom workflows, end users must download the respective Github workflows contained in “VSI_Hitachi_Intersight_VVF9_Workflows_Day_0.json”  to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) under section "Import Custom Workflows".
+To deploy these custom workflows, end users must download the respective Github workflows VSI_Hitachi_Intersight_VVF9_Workflows_Day_0.json via https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main/Hitachi%20VSP%20with%20Intersight%20Cloud%20Orchestrator to their Cisco Intersight account and import the via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) under section "Import Custom Workflows".
 
 In the Github repository also download to your desktop the following file Hitachi_VSI_Provisioning_Worksheet.docx to assist you in documenting the values to be used for the ICO workflows.  
 
@@ -347,7 +347,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 4. Presents datastore volumes across all configured server paths using LUN ID 1 predefined.    
 
 #### Workflow Considerations
-1. Verify datastore visibility from all ESXi hosts.   
+1. Onboard datastore and confirm visibility from all ESXi hosts.   
 2. Validate VMware multipathing functionality.   
 3. Confirm datastore discovery within vCenter.   
 4. Verify consistent presentation across Fabric A and Fabric B.   
@@ -391,7 +391,7 @@ The following steps must be executed once the custom ICO workflow has been impor
 4. Presents datastore volumes across all configured server paths using LUN ID 2 predefined.    
 
 #### Workflow Considerations
-1. Verify datastore visibility from all ESXi hosts.   
+1. Onboard datastore and confirm visibility from all ESXi hosts.   
 2. Validate VMware multipathing functionality.   
 3. Confirm datastore discovery within vCenter.   
 4. Verify consistent presentation across Fabric A and Fabric B.   
