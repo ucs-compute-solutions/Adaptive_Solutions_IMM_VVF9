@@ -3,8 +3,8 @@ Ansible repository for the Adaptive Solutions Conveged Infrastructure. This rele
 - A sub-set of a buildout covering the UCS Domain and UCS Server Profile Template creation through Intersight Managed Mode (IMM) interacting with Intersight.
 - Hitachi VSP One Block High End storage buildout with a Fibre Channel storage subsystem.
 
-This repository will also include ICO custom  Ansible exported workflows for:
--  TBD . These workflows will enable users who utilize the Hitachi VSP  within ICO environments to efficiently utilize Ansible within a single workflow for large scale environments.
+This repository will also include ICO custom Ansible exported workflows:
+-  To enable users who utilize the Hitachi VSP within ICO environments to efficiently utilize Ansible within a single workflow for large scale environments. (Arvin adjust as needed)
 
 # Cisco and Hitachi Adaptive Solutions for Converged Infrastructure IMM configuration with Ansible
 
@@ -89,8 +89,7 @@ The steps that will need to have been completed include:
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)   
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
    Refer to the README.md file.
-3. Installation of the cisco.intersight ansible-galaxy collection. Refer to the "Cisco and Adaptive Solutions for Converged Infrastructure IMM configuration with    Ansible" section in this README.md file.  
-4. With the prerequisite steps complete, copy the yml files listed below from https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main/Cisco%20and%20Hitachi%20Adaptive%20Solutions%20Ansible%20Playbooks (Needs fixing for source of copy)
+3. With the prerequisite steps complete, copy the yml files listed below from https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main/Cisco%20and%20Hitachi%20Adaptive%20Solutions%20Ansible%20Playbooks (Needs fixing for source of copy)
    directory to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct which was created with the hitachivantara.vspone_block install. 
 
 | File name |	                                  Description |    
