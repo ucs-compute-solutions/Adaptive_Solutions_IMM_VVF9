@@ -4,7 +4,7 @@
       api_private_key: "{{ api_private_key }}"
       api_key_id: "{{ api_key_id }}"
       organization: "{{ org_name }}"
-      name: "{{ name_of_m7_bios_policy }}"
+      name: "{{ name_of_bios_policy }}"
       description: "{{ description_of_intel_m7_bios_policy }}"
       tags:
         - Key: "configmode"
@@ -22,7 +22,7 @@
       api_private_key: "{{ api_private_key }}"
       api_key_id: "{{ api_key_id }}"
       organization: "{{ org_name }}"
-      name: "{{ name_of_m8_bios_policy }}"
+      name: "{{ name_of_bios_policy }}"
       description: "{{ description_of_intel_m8_bios_policy }}"
       tags:
         - Key: "configmode"
