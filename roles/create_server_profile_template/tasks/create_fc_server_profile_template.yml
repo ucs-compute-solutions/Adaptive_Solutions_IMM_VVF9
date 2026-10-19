@@ -69,9 +69,9 @@
             }
   when: server_generation == "M7"
 
-- name: "Configure Server Profile Template for M6 Fibre Channel Boot"
+- name: "Configure Server Profile Template for M8 Fibre Channel Boot"
   vars:
-        api_info: &api_info_m6_assign_fc
+        api_info: &api_info_m8_assign_fc
           api_private_key: "{{ api_private_key }}"
           api_key_id: "{{ api_key_id }}"
           api_uri: "{{ api_uri | default(omit) }}"
@@ -79,7 +79,7 @@
           state: "{{ state | default(omit) }}"
 
   cisco.intersight.intersight_rest_api:
-          <<: *api_info_m6_assign_fc
+          <<: *api_info_m8_assign_fc
           resource_path: /server/ProfileTemplates
           query_params:
             $filter: "Name eq '{{ name_of_fc_SPT }}'"
