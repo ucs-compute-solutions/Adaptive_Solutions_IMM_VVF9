@@ -20,6 +20,7 @@
 
 - name: "Get BIOS Policy Details"
   vars:
+    bios_policy_name: "{{ name_of_m7_bios_policy if server_generation == 'M7' else name_of_m8_bios_policy }}"
     api_info: &api_info_bios_policy
       api_private_key: "{{ intersight_api_private_key }}"
       api_key_id: "{{ intersight_api_key_id }}"
@@ -31,7 +32,7 @@
     <<: *api_info_bios_policy
     resource_path: /bios/Policies
     query_params:
-      $filter: "Name eq '{{ name_of_m8_bios_policy }}'"
+      $filter: "Name eq '{{ name_of_bios_policy }}'"
   register:  bios_policy_details
 
 - name: "Get FC Boot Order Policy Details"
