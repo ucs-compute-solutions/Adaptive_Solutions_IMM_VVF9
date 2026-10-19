@@ -89,8 +89,8 @@ The steps that will need to have been completed include:
 1. [VSP One Block High End Installation and Configuration ](https://docs.hitachivantara.com/r/en-us/mk-26vsp1b030/latest)   
 2. [Installation of Hitachi VSP One Block Storage Modules for Red Hat Ansible 4.7](https://github.com/hitachi-vantara/vspone-block-ansible/tree/pre-release-4.7.0)  
    Refer to the README.md file.
-3. With the prerequisite steps complete, copy the yml files listed below from https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main/Cisco%20and%20Hitachi%20Adaptive%20Solutions%20Ansible%20Playbooks (Needs fixing for source of copy)
-   directory to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct which was created with the hitachivantara.vspone_block install. 
+3. With the prerequisite steps complete, copy the yml files listed below from https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9
+   to: $HOME/.ansible/collections/ansible_collections/hitachivantara/vspone_block/playbooks/vsp_direct which was created with the hitachivantara.vspone_block install. 
 
 | File name |	                                  Description |    
 | --- | --- |
