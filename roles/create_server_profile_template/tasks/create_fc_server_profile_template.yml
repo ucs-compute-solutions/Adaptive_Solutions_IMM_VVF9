@@ -21,7 +21,7 @@
               ClassId: "server.ProfileTemplate",
               "PolicyBucket": [
                 {
-                  "Moid": "{{ m8_bios_policy_details.api_response.Moid }}",
+                  "Moid": "{{ bios_policy_details.api_response.Moid }}",
                   "ObjectType": "bios.Policy"
                 },
                 {
@@ -90,7 +90,7 @@
               ClassId: "server.ProfileTemplate",
               "PolicyBucket": [
                 {
-                  "Moid": "{{ m8_bios_policy_details.api_response.Moid }}",
+                  "Moid": "{{ bios_policy_details.api_response.Moid }}",
                   "ObjectType": "bios.Policy"
                 },
                 {
