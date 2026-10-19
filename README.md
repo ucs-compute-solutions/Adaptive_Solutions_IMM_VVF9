@@ -3,8 +3,8 @@ Ansible repository for the Adaptive Solutions Conveged Infrastructure. This rele
 - A sub-set of a buildout covering the UCS Domain and UCS Server Profile Template creation through Intersight Managed Mode (IMM) interacting with Intersight.
 - Hitachi VSP One Block High End storage buildout with a Fibre Channel storage subsystem.
 
-This repository will also include ICO custom Ansible exported workflows:
--  To enable users who utilize the Hitachi VSP within ICO environments to efficiently utilize Ansible within a single workflow for large scale environments. (Arvin adjust as needed)
+This repository will also include ICO custom exported workflows:
+-  To enable users who utilize the Hitachi VSP within ICO environments to efficiently utilize single workflows for large scale environments.
 
 # Cisco and Hitachi Adaptive Solutions for Converged Infrastructure IMM configuration with Ansible
 
