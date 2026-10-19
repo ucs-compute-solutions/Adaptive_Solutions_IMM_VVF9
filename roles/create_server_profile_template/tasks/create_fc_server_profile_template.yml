@@ -37,10 +37,6 @@
                   "ObjectType": "ipmioverlan.Policy"
                 },
                 {
-                  "Moid": "{{ local_user_policy_details.api_response.Moid }}",
-                  "ObjectType": "iam.EndPointUserPolicy"
-                },
-                {
                   "Moid": "{{ fc_lan_connectivity_policy_details.api_response.Moid }}",
                   "ObjectType": "vnic.LanConnectivityPolicy"
                 },
@@ -104,10 +100,6 @@
                 {
                   "Moid": "{{ ipmi_policy_details.api_response.Moid }}",
                   "ObjectType": "ipmioverlan.Policy"
-                },
-                {
-                  "Moid": "{{ local_user_policy_details.api_response.Moid }}",
-                  "ObjectType": "iam.EndPointUserPolicy"
                 },
                 {
                   "Moid": "{{ fc_lan_connectivity_policy_details.api_response.Moid }}",
