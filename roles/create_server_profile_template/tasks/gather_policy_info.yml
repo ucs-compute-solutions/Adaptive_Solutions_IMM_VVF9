@@ -32,7 +32,7 @@
     <<: *api_info_bios_policy
     resource_path: /bios/Policies
     query_params:
-      $filter: "Name eq '{{ name_of_bios_policy }}'"
+      $filter: "Name eq '{{ bios_policy_name }}'"
   register:  bios_policy_details
 
 - name: "Get FC Boot Order Policy Details"
