@@ -348,8 +348,8 @@ name_of_chassis_thermal_policy: "{{ prefix }}-Chassis-Thermal_Policy"
 name_of_chassis_power_policy: "{{ prefix }}-Chassis-Power_Policy"
 
 # BIOS Policy 
-name_of_bios_policy: "{{ prefix }}-{{ server_cpu_type }}-BIOS_M8_Policy"
-#name_of_bios_policy: "{{ prefix }}-{{ server_cpu_type }}-BIOS_M7_Policy"
+name_of_m7_bios_policy: "{{ prefix }}-{{ server_cpu_type }}-BIOS_M7_Policy"
+name_of_m8_bios_policy: "{{ prefix }}-{{ server_cpu_type }}-BIOS_M8_Policy"
 description_of_intel_m7_bios_policy: "M7 Intel recommended BIOS policies for Virtualization"
 description_of_intel_m8_bios_policy: "M8 Intel recommended BIOS policies for Virtualization"
 description_of_amd_m8_bios_policy: "M8 AMD recommended BIOS policies for Virtualization"
