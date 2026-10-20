@@ -161,9 +161,7 @@ The following steps must be completed prior to the execution of the Hitachi ICO 
 
 To deploy these custom workflows, end users must download the respective Github workflows VSI_Hitachi_Intersight_VVF9_Workflows_Day_0.json via https://github.com/ucs-compute-solutions/Adaptive_Solutions_IMM_VVF9/tree/main/Hitachi%20VSP%20with%20Intersight%20Cloud%20Orchestrator to their Cisco Intersight account and import via the ICO Import Workflow function. For information on how to import a workflow into a Cisco Intersight instance,  refer to the following [Documentation](https://docs.hitachivantara.com/v/u/en-us/application-optimized-solutions/mk-sl-280) under section "Import Custom Workflows".
 
-In the Github repository also download to your desktop the following file Hitachi_VSI_Provisioning_Worksheet.docx to assist you in documenting the values to be used for the ICO workflows.  
-
-For detailed information on executing the workflows refer to the "Cisco and Hitachi Adaptive Solutions VVF 9.0 Deployment Guide for VMWare vSphere Foundation 9.0, Hitachi VSP One Block High End and Cisco UCS X210c M8 Servers".  ADD THE URL HERE.   
+In the Github repository also download to your desktop the following file Hitachi_VSI_Provisioning_Worksheet.docx to assist you in documenting the values to be used for the ICO workflows.     
 
 Five workflows are available to configure the storage requirements and should be executed in the order listed below to mimic the Adaptive Solutions Deployment Guide:
 
